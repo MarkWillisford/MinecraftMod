@@ -1,0 +1,19 @@
+{
+  "variants": {
+    "facing=east": {
+      "model": "jpsbase:block/slate_red_polished_vertical_slab",
+      "y": 270
+    },
+    "facing=north": {
+      "model": "jpsbase:block/slate_red_polished_vertical_slab",
+      "y": 180
+    },
+    "facing=south": {
+      "model": "jpsbase:block/slate_red_polished_vertical_slab"
+    },
+    "facing=west": {
+      "model": "jpsbase:block/slate_red_polished_vertical_slab",
+      "y": 90
+    }
+  }
+}

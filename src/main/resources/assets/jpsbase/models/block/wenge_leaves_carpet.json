@@ -1,0 +1,7 @@
+{
+  "parent": "jpsbase:block/carpet",
+  "textures": {
+    "0": "jpsbase:blocks/wenge_leaves",
+    "particle": "jpsbase:blocks/wenge_leaves"
+  }
+}

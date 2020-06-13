@@ -1,0 +1,8 @@
+{
+  "parent": "block/outer_stairs",
+  "textures": {
+    "bottom": "jpsbase:blocks/marble",
+    "side": "jpsbase:blocks/marble",
+    "top": "jpsbase:blocks/marble"
+  }
+}

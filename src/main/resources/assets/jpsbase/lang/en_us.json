@@ -1,0 +1,19 @@
+{
+	"item.jpsbase.example_item":"Example Item",
+	
+	"item.jpsbase.example_sword":"Example Sword",
+	"item.jpsbase.example_pickaxe":"Example Pickaxe",
+	"item.jpsbase.example_shovel":"Example Shovel",
+	"item.jpsbase.example_axe":"Example Axe",
+	"item.jpsbase.example_hue":"Example Hue",
+	
+	"item.jpsbase.test_helmet":"Test Helmet",
+	"item.jpsbase.test_chestplate":"Test Chestplate",
+	"item.jpsbase.test_leggings":"Test Leggings",
+	"item.jpsbase.test_boots":"Test Boots",
+	
+	"block.jpsbase.example_block":"Example Block",
+	"block.jpsbase.specal_block":"Specal Block",
+	
+	"itemGroup.tutorialtab":"Tutorial Tab"
+}

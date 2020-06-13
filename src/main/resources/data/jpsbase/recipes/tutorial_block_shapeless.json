@@ -1,0 +1,14 @@
+{
+	"type":"minecraft:crafting_shapeless",
+	"ingredients":[
+		{
+			"item":"minecraft:apple"		
+		},
+		{
+			"item":"buildingmod:example_item"
+		}
+	],
+	"result":{
+		"item":"buildingmod:example_block"
+	}
+} 

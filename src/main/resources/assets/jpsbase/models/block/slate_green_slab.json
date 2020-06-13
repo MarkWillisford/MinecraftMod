@@ -1,0 +1,8 @@
+{
+  "parent": "block/slab",
+  "textures": {
+    "bottom": "jpsbase:blocks/slate_green",
+    "side": "jpsbase:blocks/slate_green",
+    "top": "jpsbase:blocks/slate_green"
+  }
+}

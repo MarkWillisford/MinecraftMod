@@ -1,0 +1,13 @@
+{
+  "variants": {
+    "type=bottom": {
+      "model": "jpsbase:block/dirt_slab"
+    },
+    "type=double": {
+      "model": "jpsbase:block/dirt_block"
+    },
+    "type=top": {
+      "model": "jpsbase:block/dirt_slab_top"
+    }
+  }
+}

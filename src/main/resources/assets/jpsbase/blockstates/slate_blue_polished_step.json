@@ -1,0 +1,63 @@
+{
+  "variants": {
+    "orientation=be": {
+      "model": "jpsbase:block/slate_blue_polished_step",
+      "uvlock": true,
+      "y": 90
+    },
+    "orientation=bn": {
+      "model": "jpsbase:block/slate_blue_polished_step"
+    },
+    "orientation=bs": {
+      "model": "jpsbase:block/slate_blue_polished_step",
+      "uvlock": true,
+      "x": 90
+    },
+    "orientation=bw": {
+      "model": "jpsbase:block/slate_blue_polished_step",
+      "uvlock": true,
+      "y": 270
+    },
+    "orientation=ne": {
+      "model": "jpsbase:block/slate_blue_polished_step_vertical",
+      "uvlock": true,
+      "y": 90
+    },
+    "orientation=nw": {
+      "model": "jpsbase:block/slate_blue_polished_step_vertical"
+    },
+    "orientation=se": {
+      "model": "jpsbase:block/slate_blue_polished_step_vertical",
+      "uvlock": true,
+      "y": 180
+    },
+    "orientation=sw": {
+      "model": "jpsbase:block/slate_blue_polished_step_vertical",
+      "uvlock": true,
+      "y": 270
+    },
+    "orientation=te": {
+      "model": "jpsbase:block/slate_blue_polished_step",
+      "uvlock": true,
+      "x": 270,
+      "y": 90
+    },
+    "orientation=tn": {
+      "model": "jpsbase:block/slate_blue_polished_step",
+      "uvlock": true,
+      "x": 270
+    },
+    "orientation=ts": {
+      "model": "jpsbase:block/slate_blue_polished_step",
+      "uvlock": true,
+      "x": 270,
+      "y": 180
+    },
+    "orientation=tw": {
+      "model": "jpsbase:block/slate_blue_polished_step",
+      "uvlock": true,
+      "x": 270,
+      "y": 270
+    }
+  }
+}

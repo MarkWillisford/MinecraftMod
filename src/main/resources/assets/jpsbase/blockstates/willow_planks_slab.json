@@ -1,0 +1,13 @@
+{
+  "variants": {
+    "type=bottom": {
+      "model": "jpsbase:block/willow_planks_slab"
+    },
+    "type=double": {
+      "model": "jpsbase:block/willow_planks_block"
+    },
+    "type=top": {
+      "model": "jpsbase:block/willow_planks_slab_top"
+    }
+  }
+}

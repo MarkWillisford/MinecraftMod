@@ -1,0 +1,6 @@
+{
+  "parent": "block/cross",
+  "textures": {
+    "cross": "jpsbase:blocks/cherry_white_sapling"
+  }
+}

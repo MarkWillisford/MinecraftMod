@@ -1,0 +1,8 @@
+{
+  "parent": "block/slab_top",
+  "textures": {
+    "bottom": "jpsbase:blocks/pine_planks",
+    "side": "jpsbase:blocks/pine_planks",
+    "top": "jpsbase:blocks/pine_planks"
+  }
+}

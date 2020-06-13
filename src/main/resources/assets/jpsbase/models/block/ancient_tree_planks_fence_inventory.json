@@ -1,0 +1,6 @@
+{
+  "parent": "block/fence_inventory",
+  "textures": {
+    "texture": "jpsbase:blocks/ancient_tree_planks"
+  }
+}

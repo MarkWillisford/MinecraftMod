@@ -1,0 +1,8 @@
+{
+  "parent": "block/slab",
+  "textures": {
+    "bottom": "jpsbase:blocks/willow_planks",
+    "side": "jpsbase:blocks/willow_planks",
+    "top": "jpsbase:blocks/willow_planks"
+  }
+}

@@ -1,0 +1,7 @@
+{
+	"replace":"false",
+	"values":[
+		"buildingmod:example_item",
+		"minecraft:apple"
+	]
+}

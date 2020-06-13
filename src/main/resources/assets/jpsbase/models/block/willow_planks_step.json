@@ -1,0 +1,7 @@
+{
+  "parent": "jpsbase:block/step",
+  "textures": {
+    "0": "jpsbase:blocks/willow_planks",
+    "particle": "jpsbase:blocks/willow_planks"
+  }
+}

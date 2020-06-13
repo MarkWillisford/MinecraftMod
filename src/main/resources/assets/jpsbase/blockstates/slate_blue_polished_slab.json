@@ -1,0 +1,13 @@
+{
+  "variants": {
+    "type=bottom": {
+      "model": "jpsbase:block/slate_blue_polished_slab"
+    },
+    "type=double": {
+      "model": "jpsbase:block/slate_blue_polished_block"
+    },
+    "type=top": {
+      "model": "jpsbase:block/slate_blue_polished_slab_top"
+    }
+  }
+}

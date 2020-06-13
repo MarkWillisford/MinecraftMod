@@ -1,0 +1,10 @@
+{
+  "variants": {
+    "powered=false": {
+      "model": "jpsbase:block/fir_planks_pressure_plate"
+    },
+    "powered=true": {
+      "model": "jpsbase:block/fir_planks_pressure_plate_down"
+    }
+  }
+}

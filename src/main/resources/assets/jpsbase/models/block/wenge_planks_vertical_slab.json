@@ -1,0 +1,7 @@
+{
+  "parent": "jpsbase:block/vertical_slab",
+  "textures": {
+    "0": "jpsbase:blocks/wenge_planks",
+    "particle": "jpsbase:blocks/wenge_planks"
+  }
+}

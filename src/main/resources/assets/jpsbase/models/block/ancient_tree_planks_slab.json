@@ -1,0 +1,8 @@
+{
+  "parent": "block/slab",
+  "textures": {
+    "bottom": "jpsbase:blocks/ancient_tree_planks",
+    "side": "jpsbase:blocks/ancient_tree_planks",
+    "top": "jpsbase:blocks/ancient_tree_planks"
+  }
+}
