@@ -41,6 +41,8 @@ public class JPsBase
     public static JPsBase instance;
     public static final ResourceLocation EXAMPLE_DIM_TYPE = new ResourceLocation(MOD_ID, "jpsbase");
     
+    // https://www.planetminecraft.com/texture-pack/mizunos-16-craft/%3Ca%20href= ?
+    
     public JPsBase() {
     	final IEventBus modEventBus = FMLJavaModLoadingContext.get().getModEventBus();
     	
@@ -87,7 +89,7 @@ public class JPsBase
     		registry.register(blockItem);
     	});
     	
-    	Block block = BlockInitNew.DEF_ITEM.get();
+    	//Block block = BlockInitNew.DEF_ITEM.get();
     	Item item = ItemInitNew.DEF_ITEM.get();
     	
     	LOGGER.debug("Registered BlockItems");

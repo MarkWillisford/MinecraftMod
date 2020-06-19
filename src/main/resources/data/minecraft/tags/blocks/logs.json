@@ -1,6 +1,7 @@
 {
   "replace": false,
   "values": [
-    "jpsbase:walnut_log"
+    "jpsbase:walnut_log",
+    "jpsbase:willow_log"
   ]
 }

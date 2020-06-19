@@ -3,6 +3,7 @@ package com.markwillisford.jpsbase.world.gen;
 import com.markwillisford.jpsbase.init.BlockInitNew;
 
 import net.minecraft.world.biome.Biome;
+import net.minecraft.world.biome.Biomes;
 import net.minecraft.world.gen.GenerationStage;
 import net.minecraft.world.gen.GenerationStage.Decoration;
 import net.minecraft.world.gen.feature.Feature;
@@ -22,6 +23,8 @@ public class OreGen {
 			// Andisite: 33 - 10, 0, 0, 80
 			ConfiguredPlacement<CountRangeConfig> gemConfig = Placement.COUNT_RANGE
 				.configure(new CountRangeConfig(1, 0, 0, 16));	// rarity, lowest y, ?, highest y
+			ConfiguredPlacement<CountRangeConfig> oreConfig = Placement.COUNT_RANGE
+					.configure(new CountRangeConfig(1, 0, 0, 16));	
 			ConfiguredPlacement<CountRangeConfig> alternateStoneConfig = Placement.COUNT_RANGE
 					.configure(new CountRangeConfig(5, 32, 0, 80));	
 			
@@ -33,6 +36,15 @@ public class OreGen {
 					Feature.ORE.withConfiguration(new OreFeatureConfig(OreFeatureConfig.FillerBlockType.NATURAL_STONE,
 					BlockInitNew.SAPPHIRE_ORE.get().getDefaultState(), 2))
 					.withPlacement(gemConfig));
+			biome.addFeature(GenerationStage.Decoration.UNDERGROUND_ORES,
+					Feature.ORE.withConfiguration(new OreFeatureConfig(OreFeatureConfig.FillerBlockType.NATURAL_STONE,
+					BlockInitNew.SMALL_MITHRAL_ORE.get().getDefaultState(), 2))
+					.withPlacement(oreConfig));
+			biome.addFeature(GenerationStage.Decoration.UNDERGROUND_ORES,
+					Feature.ORE.withConfiguration(new OreFeatureConfig(OreFeatureConfig.FillerBlockType.NATURAL_STONE,
+					BlockInitNew.SMALL_ADAMANTINE_ORE.get().getDefaultState(), 2))
+					.withPlacement(oreConfig));
+			
 			biome.addFeature(GenerationStage.Decoration.UNDERGROUND_ORES,
 					Feature.ORE.withConfiguration(new OreFeatureConfig(OreFeatureConfig.FillerBlockType.NATURAL_STONE,
 					BlockInitNew.MARBLE.get().getDefaultState(), 33))
@@ -57,14 +69,17 @@ public class OreGen {
 					Feature.ORE.withConfiguration(new OreFeatureConfig(OreFeatureConfig.FillerBlockType.NATURAL_STONE,
 					BlockInitNew.SLATE_RED.get().getDefaultState(), 33))
 					.withPlacement(alternateStoneConfig));
-			/*if (biome == Biomes.PLAINS) {
-				ConfiguredPlacement<CountRangeConfig> customConfig = Placement.COUNT_RANGE
-						.configure(new CountRangeConfig(20, 5, 0, 128));
+			
+			if (biome == Biomes.MOUNTAINS) {
 				biome.addFeature(GenerationStage.Decoration.UNDERGROUND_ORES,
 						Feature.ORE.withConfiguration(new OreFeatureConfig(OreFeatureConfig.FillerBlockType.NATURAL_STONE,
-						BlockInit.example_block.getDefaultState(), 10))
-						.withPlacement(customConfig));
-			}*/
+						BlockInitNew.MITHRAL_ORE.get().getDefaultState(), 4))
+						.withPlacement(oreConfig));
+				biome.addFeature(GenerationStage.Decoration.UNDERGROUND_ORES,
+						Feature.ORE.withConfiguration(new OreFeatureConfig(OreFeatureConfig.FillerBlockType.NATURAL_STONE,
+						BlockInitNew.ADAMANTINE_ORE.get().getDefaultState(), 4))
+						.withPlacement(oreConfig));
+			}
 		}
 	}
 }

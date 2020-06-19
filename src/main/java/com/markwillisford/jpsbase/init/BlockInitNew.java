@@ -11,6 +11,7 @@ import com.markwillisford.jpsbase.objects.blocks.ModWoodButtonBlock;
 import com.markwillisford.jpsbase.objects.blocks.StepBlock;
 import com.markwillisford.jpsbase.objects.blocks.VerticalSlabBlock;
 import com.markwillisford.jpsbase.world.feature.WalnutTree;
+import com.markwillisford.jpsbase.world.feature.WillowTree;
 
 import net.minecraft.block.Block;
 import net.minecraft.block.Blocks;
@@ -31,7 +32,7 @@ import net.minecraftforge.registries.ForgeRegistries;
 public class BlockInitNew {
 	public static final DeferredRegister<Block> BLOCKS = new DeferredRegister<>(ForgeRegistries.BLOCKS, JPsBase.MOD_ID);
 	
-	public static final RegistryObject<Block> DEF_ITEM = BLOCKS.register("def_block", () -> new Block(Block.Properties.create(Material.IRON)));
+	// public static final RegistryObject<Block> DEF_ITEM = BLOCKS.register("def_block", () -> new Block(Block.Properties.create(Material.IRON)));
 	
 	// Stones and Slates
 	public static final RegistryObject<Block> MARBLE = BLOCKS.register("marble", () -> new Block(Block.Properties.create(Material.ROCK)));
@@ -249,7 +250,7 @@ public class BlockInitNew {
 	public static final RegistryObject<Block> WILLOW_PLANKS = BLOCKS.register("willow_planks", () -> new Block(Block.Properties.from(Blocks.OAK_PLANKS)));
 	public static final RegistryObject<Block> WILLOW_LOG = BLOCKS.register("willow_log", () -> new LogBlock(MaterialColor.WOOD, Block.Properties.from(Blocks.OAK_LOG)));
 	public static final RegistryObject<Block> WILLOW_LEAVES = BLOCKS.register("willow_leaves", () -> new LeavesBlock(Block.Properties.from(Blocks.OAK_LEAVES)));
-	public static final RegistryObject<Block> WILLOW_SAPLING = BLOCKS.register("willow_sapling", () -> new ModSaplingBlock(() -> new WalnutTree(), Block.Properties.from(Blocks.OAK_SAPLING)));
+	public static final RegistryObject<Block> WILLOW_SAPLING = BLOCKS.register("willow_sapling", () -> new ModSaplingBlock(() -> new WillowTree(), Block.Properties.from(Blocks.OAK_SAPLING)));
 	public static final RegistryObject<Block> WILLOW_LEAVES_CARPET = BLOCKS.register("willow_leaves_carpet", () -> new ModCarpetBlock(Block.Properties.from(Blocks.OAK_LEAVES)));
 	
 	public static final RegistryObject<Block> WILLOW_PLANKS_SLAB = BLOCKS.register("willow_planks_slab", () -> new SlabBlock(Block.Properties.create(Material.WOOD)));
