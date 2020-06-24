@@ -1,4 +1,22 @@
 -------------------------------------------
+Current Tasks and Places of Work
+-------------------------------------------
+FoliagePlacer must be built for each tree shape and size
+Trees must be generated in appropriate biomes
+dry and wet mud must be generated around and under water
+Recipies added
+Stripped logs for all trees added
+Code refactoring in init
+Lang file updated
+Wenge Tree renamed
+
+
+
+
+
+
+
+-------------------------------------------
 Source installation information for modders
 -------------------------------------------
 This code follows the Minecraft Forge installation methodology. It will apply

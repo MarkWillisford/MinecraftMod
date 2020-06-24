@@ -16,41 +16,18 @@ import net.minecraft.world.gen.treedecorator.LeaveVineTreeDecorator;
 import net.minecraftforge.common.IPlantable;
 
 public class WalnutTree extends Tree{
-	/*public static final TreeFeatureConfig PINE_TREE_CONFIG = (new TreeFeatureConfig.Builder(
-			new SimpleBlockStateProvider(BlockInitNew.WALNUT_LOG.get().getDefaultState()), 
-			new SimpleBlockStateProvider(BlockInitNew.WALNUT_LEAVES.get().getDefaultState()), 
-			new PineFoliagePlacer(1, 0)))
-			.baseHeight(7)
-			.heightRandA(4)
-			.trunkTopOffset(1)
-			.foliageHeight(3)
-			.foliageHeightRandom(1)
-			.ignoreVines()
-			.setSapling((IPlantable)BlockInitNew.WALNUT_SAPLING.get()).build();
 	   
 	public static final TreeFeatureConfig WALNUT_TREE_CONFIG = (new TreeFeatureConfig.Builder(
 			new SimpleBlockStateProvider(BlockInitNew.WALNUT_LOG.get().getDefaultState()), 
 			new SimpleBlockStateProvider(BlockInitNew.WALNUT_LEAVES.get().getDefaultState()), 
-			new BlobFoliagePlacer(3, 0)))				// leaf radius, 
-			.baseHeight(6)			// func_225569_d_	// baseHeight
-			.heightRandA(3)			// func_227354_b_	// heightRandA
-			.foliageHeight(5)		// func_227360_i_	// foliageHeight
+			new BlobFoliagePlacer(1, 0)))				// leaf radius, 
+			.baseHeight(5)			// func_225569_d_	// baseHeight
+			.heightRandA(2)			// func_227354_b_	// heightRandA
+			.foliageHeight(10)		// func_227360_i_	// foliageHeight
 			.ignoreVines()			// func_227352_a_	// ignoreVines
 			.setSapling((IPlantable)BlockInitNew.WALNUT_SAPLING.get()).build();		// func_225568_b_	// build
-	public static final TreeFeatureConfig SPRUCE_TREE_CONFIG = (new TreeFeatureConfig.Builder(
-			new SimpleBlockStateProvider(BlockInitNew.WALNUT_LOG.get().getDefaultState()), 
-			new SimpleBlockStateProvider(BlockInitNew.WALNUT_LEAVES.get().getDefaultState()), 
-			// new AcaciaFoliagePlacer(2, 0)))
-			new BlobFoliagePlacer(0, 0)))
-			.baseHeight(5)
-			.heightRandA(0)
-			.trunkHeight(0)
-			.trunkHeightRandom(0)
-			.trunkTopOffsetRandom(0)
-			.ignoreVines()
-			.setSapling((IPlantable)BlockInitNew.WALNUT_SAPLING.get()).build();*/
 	
-	public static final TreeFeatureConfig WALNUT_TREE_CONFIG = (new TreeFeatureConfig.Builder(
+	public static final TreeFeatureConfig WALNUT_TREE_CONFIG2 = (new TreeFeatureConfig.Builder(
 			new SimpleBlockStateProvider(BlockInitNew.WALNUT_LOG.get().getDefaultState()), 
 			new SimpleBlockStateProvider(BlockInitNew.WALNUT_LEAVES.get().getDefaultState()), 
 			// new AcaciaFoliagePlacer(2, 0)))
