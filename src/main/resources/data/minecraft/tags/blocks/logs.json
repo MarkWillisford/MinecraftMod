@@ -2,6 +2,13 @@
   "replace": false,
   "values": [
     "jpsbase:walnut_log",
-    "jpsbase:willow_log"
+    "jpsbase:mahogany_log",
+    "jpsbase:fir_log",
+    "jpsbase:ancient_tree_log",
+    "jpsbase:pine_log",
+    "jpsbase:wenge_log",    
+    "jpsbase:willow_log",
+    "jpsbase:maple_log",
+    "jpsbase:cherry_log"
   ]
 }

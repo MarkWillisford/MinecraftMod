@@ -10,7 +10,15 @@ import com.markwillisford.jpsbase.objects.blocks.ModSaplingBlock;
 import com.markwillisford.jpsbase.objects.blocks.ModWoodButtonBlock;
 import com.markwillisford.jpsbase.objects.blocks.StepBlock;
 import com.markwillisford.jpsbase.objects.blocks.VerticalSlabBlock;
+import com.markwillisford.jpsbase.world.feature.AncientTree;
+import com.markwillisford.jpsbase.world.feature.CherryPinkTree;
+import com.markwillisford.jpsbase.world.feature.CherryWhiteTree;
+import com.markwillisford.jpsbase.world.feature.FirTree;
+import com.markwillisford.jpsbase.world.feature.MahoganyTree;
+import com.markwillisford.jpsbase.world.feature.MapleTree;
+import com.markwillisford.jpsbase.world.feature.PineTree;
 import com.markwillisford.jpsbase.world.feature.WalnutTree;
+import com.markwillisford.jpsbase.world.feature.WengeTree;
 import com.markwillisford.jpsbase.world.feature.WillowTree;
 
 import net.minecraft.block.Block;
@@ -180,7 +188,7 @@ public class BlockInitNew {
 	public static final RegistryObject<Block> MAHOGANY_PLANKS = BLOCKS.register("mahogany_planks", () -> new Block(Block.Properties.from(Blocks.OAK_PLANKS)));
 	public static final RegistryObject<Block> MAHOGANY_LOG = BLOCKS.register("mahogany_log", () -> new LogBlock(MaterialColor.WOOD, Block.Properties.from(Blocks.OAK_LOG)));
 	public static final RegistryObject<Block> MAHOGANY_LEAVES = BLOCKS.register("mahogany_leaves", () -> new LeavesBlock(Block.Properties.from(Blocks.OAK_LEAVES)));
-	public static final RegistryObject<Block> MAHOGANY_SAPLING = BLOCKS.register("mahogany_sapling", () -> new ModSaplingBlock(() -> new WalnutTree(), Block.Properties.from(Blocks.OAK_SAPLING)));
+	public static final RegistryObject<Block> MAHOGANY_SAPLING = BLOCKS.register("mahogany_sapling", () -> new ModSaplingBlock(() -> new MahoganyTree(), Block.Properties.from(Blocks.OAK_SAPLING)));
 	public static final RegistryObject<Block> MAHOGANY_LEAVES_CARPET = BLOCKS.register("mahogany_leaves_carpet", () -> new ModCarpetBlock(Block.Properties.from(Blocks.OAK_LEAVES)));
 	
 	public static final RegistryObject<Block> MAHOGANY_PLANKS_SLAB = BLOCKS.register("mahogany_planks_slab", () -> new SlabBlock(Block.Properties.create(Material.WOOD)));
@@ -194,7 +202,7 @@ public class BlockInitNew {
 	public static final RegistryObject<Block> FIR_PLANKS = BLOCKS.register("fir_planks", () -> new Block(Block.Properties.from(Blocks.OAK_PLANKS)));
 	public static final RegistryObject<Block> FIR_LOG = BLOCKS.register("fir_log", () -> new LogBlock(MaterialColor.WOOD, Block.Properties.from(Blocks.OAK_LOG)));
 	public static final RegistryObject<Block> FIR_LEAVES = BLOCKS.register("fir_leaves", () -> new LeavesBlock(Block.Properties.from(Blocks.OAK_LEAVES)));
-	public static final RegistryObject<Block> FIR_SAPLING = BLOCKS.register("fir_sapling", () -> new ModSaplingBlock(() -> new WalnutTree(), Block.Properties.from(Blocks.OAK_SAPLING)));
+	public static final RegistryObject<Block> FIR_SAPLING = BLOCKS.register("fir_sapling", () -> new ModSaplingBlock(() -> new FirTree(), Block.Properties.from(Blocks.OAK_SAPLING)));
 	public static final RegistryObject<Block> FIR_LEAVES_CARPET = BLOCKS.register("fir_leaves_carpet", () -> new ModCarpetBlock(Block.Properties.from(Blocks.OAK_LEAVES)));
 	
 	public static final RegistryObject<Block> FIR_PLANKS_SLAB = BLOCKS.register("fir_planks_slab", () -> new SlabBlock(Block.Properties.create(Material.WOOD)));
@@ -208,7 +216,7 @@ public class BlockInitNew {
 	public static final RegistryObject<Block> ANCIENT_TREE_PLANKS = BLOCKS.register("ancient_tree_planks", () -> new Block(Block.Properties.from(Blocks.OAK_PLANKS)));
 	public static final RegistryObject<Block> ANCIENT_TREE_LOG = BLOCKS.register("ancient_tree_log", () -> new LogBlock(MaterialColor.WOOD, Block.Properties.from(Blocks.OAK_LOG)));
 	public static final RegistryObject<Block> ANCIENT_TREE_LEAVES = BLOCKS.register("ancient_tree_leaves", () -> new LeavesBlock(Block.Properties.from(Blocks.OAK_LEAVES)));
-	public static final RegistryObject<Block> ANCIENT_TREE_SAPLING = BLOCKS.register("ancient_tree_sapling", () -> new ModSaplingBlock(() -> new WalnutTree(), Block.Properties.from(Blocks.OAK_SAPLING)));
+	public static final RegistryObject<Block> ANCIENT_TREE_SAPLING = BLOCKS.register("ancient_tree_sapling", () -> new ModSaplingBlock(() -> new AncientTree(), Block.Properties.from(Blocks.OAK_SAPLING)));
 	public static final RegistryObject<Block> ANCIENT_TREE_LEAVES_CARPET = BLOCKS.register("ancient_tree_leaves_carpet", () -> new ModCarpetBlock(Block.Properties.from(Blocks.OAK_LEAVES)));
 	
 	public static final RegistryObject<Block> ANCIENT_TREE_PLANKS_SLAB = BLOCKS.register("ancient_tree_planks_slab", () -> new SlabBlock(Block.Properties.create(Material.WOOD)));
@@ -222,7 +230,7 @@ public class BlockInitNew {
 	public static final RegistryObject<Block> PINE_PLANKS = BLOCKS.register("pine_planks", () -> new Block(Block.Properties.from(Blocks.OAK_PLANKS)));
 	public static final RegistryObject<Block> PINE_LOG = BLOCKS.register("pine_log", () -> new LogBlock(MaterialColor.WOOD, Block.Properties.from(Blocks.OAK_LOG)));
 	public static final RegistryObject<Block> PINE_LEAVES = BLOCKS.register("pine_leaves", () -> new LeavesBlock(Block.Properties.from(Blocks.OAK_LEAVES)));
-	public static final RegistryObject<Block> PINE_SAPLING = BLOCKS.register("pine_sapling", () -> new ModSaplingBlock(() -> new WalnutTree(), Block.Properties.from(Blocks.OAK_SAPLING)));
+	public static final RegistryObject<Block> PINE_SAPLING = BLOCKS.register("pine_sapling", () -> new ModSaplingBlock(() -> new PineTree(), Block.Properties.from(Blocks.OAK_SAPLING)));
 	public static final RegistryObject<Block> PINE_LEAVES_CARPET = BLOCKS.register("pine_leaves_carpet", () -> new ModCarpetBlock(Block.Properties.from(Blocks.OAK_LEAVES)));
 	
 	public static final RegistryObject<Block> PINE_PLANKS_SLAB = BLOCKS.register("pine_planks_slab", () -> new SlabBlock(Block.Properties.create(Material.WOOD)));
@@ -236,7 +244,7 @@ public class BlockInitNew {
 	public static final RegistryObject<Block> WENGE_PLANKS = BLOCKS.register("wenge_planks", () -> new Block(Block.Properties.from(Blocks.OAK_PLANKS)));
 	public static final RegistryObject<Block> WENGE_LOG = BLOCKS.register("wenge_log", () -> new LogBlock(MaterialColor.WOOD, Block.Properties.from(Blocks.OAK_LOG)));
 	public static final RegistryObject<Block> WENGE_LEAVES = BLOCKS.register("wenge_leaves", () -> new LeavesBlock(Block.Properties.from(Blocks.OAK_LEAVES)));
-	public static final RegistryObject<Block> WENGE_SAPLING = BLOCKS.register("wenge_sapling", () -> new ModSaplingBlock(() -> new WalnutTree(), Block.Properties.from(Blocks.OAK_SAPLING)));
+	public static final RegistryObject<Block> WENGE_SAPLING = BLOCKS.register("wenge_sapling", () -> new ModSaplingBlock(() -> new WengeTree(), Block.Properties.from(Blocks.OAK_SAPLING)));
 	public static final RegistryObject<Block> WENGE_LEAVES_CARPET = BLOCKS.register("wenge_leaves_carpet", () -> new ModCarpetBlock(Block.Properties.from(Blocks.OAK_LEAVES)));
 	
 	public static final RegistryObject<Block> WENGE_PLANKS_SLAB = BLOCKS.register("wenge_planks_slab", () -> new SlabBlock(Block.Properties.create(Material.WOOD)));
@@ -264,7 +272,7 @@ public class BlockInitNew {
 	public static final RegistryObject<Block> MAPLE_PLANKS = BLOCKS.register("maple_planks", () -> new Block(Block.Properties.from(Blocks.OAK_PLANKS)));
 	public static final RegistryObject<Block> MAPLE_LOG = BLOCKS.register("maple_log", () -> new LogBlock(MaterialColor.WOOD, Block.Properties.from(Blocks.OAK_LOG)));
 	public static final RegistryObject<Block> MAPLE_LEAVES = BLOCKS.register("maple_leaves", () -> new LeavesBlock(Block.Properties.from(Blocks.OAK_LEAVES)));
-	public static final RegistryObject<Block> MAPLE_SAPLING = BLOCKS.register("maple_sapling", () -> new ModSaplingBlock(() -> new WalnutTree(), Block.Properties.from(Blocks.OAK_SAPLING)));
+	public static final RegistryObject<Block> MAPLE_SAPLING = BLOCKS.register("maple_sapling", () -> new ModSaplingBlock(() -> new MapleTree(), Block.Properties.from(Blocks.OAK_SAPLING)));
 	public static final RegistryObject<Block> MAPLE_LEAVES_CARPET = BLOCKS.register("maple_leaves_carpet", () -> new ModCarpetBlock(Block.Properties.from(Blocks.OAK_LEAVES)));
 	
 	public static final RegistryObject<Block> MAPLE_PLANKS_SLAB = BLOCKS.register("maple_planks_slab", () -> new SlabBlock(Block.Properties.create(Material.WOOD)));
@@ -280,11 +288,11 @@ public class BlockInitNew {
 	public static final RegistryObject<Block> CHERRY_LOG = BLOCKS.register("cherry_log", () -> new LogBlock(MaterialColor.WOOD, Block.Properties.from(Blocks.OAK_LOG)));
 	
 	public static final RegistryObject<Block> CHERRY_WHITE_LEAVES = BLOCKS.register("cherry_white_leaves", () -> new LeavesBlock(Block.Properties.from(Blocks.OAK_LEAVES)));
-	public static final RegistryObject<Block> CHERRY_WHITE_SAPLING = BLOCKS.register("cherry_white_sapling", () -> new ModSaplingBlock(() -> new WalnutTree(), Block.Properties.from(Blocks.OAK_SAPLING)));
+	public static final RegistryObject<Block> CHERRY_WHITE_SAPLING = BLOCKS.register("cherry_white_sapling", () -> new ModSaplingBlock(() -> new CherryWhiteTree(), Block.Properties.from(Blocks.OAK_SAPLING)));
 	public static final RegistryObject<Block> CHERRY_WHITE_LEAVES_CARPET = BLOCKS.register("cherry_white_leaves_carpet", () -> new ModCarpetBlock(Block.Properties.from(Blocks.OAK_LEAVES)));
 	
 	public static final RegistryObject<Block> CHERRY_PINK_LEAVES = BLOCKS.register("cherry_pink_leaves", () -> new LeavesBlock(Block.Properties.from(Blocks.OAK_LEAVES)));
-	public static final RegistryObject<Block> CHERRY_PINK_SAPLING = BLOCKS.register("cherry_pink_sapling", () -> new ModSaplingBlock(() -> new WalnutTree(), Block.Properties.from(Blocks.OAK_SAPLING)));
+	public static final RegistryObject<Block> CHERRY_PINK_SAPLING = BLOCKS.register("cherry_pink_sapling", () -> new ModSaplingBlock(() -> new CherryPinkTree(), Block.Properties.from(Blocks.OAK_SAPLING)));
 	public static final RegistryObject<Block> CHERRY_PINK_LEAVES_CARPET = BLOCKS.register("cherry_pink_leaves_carpet", () -> new ModCarpetBlock(Block.Properties.from(Blocks.OAK_LEAVES)));
 	
 	public static final RegistryObject<Block> CHERRY_PLANKS_SLAB = BLOCKS.register("cherry_planks_slab", () -> new SlabBlock(Block.Properties.create(Material.WOOD)));
