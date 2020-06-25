@@ -7,9 +7,9 @@ Trees must be generated in appropriate biomes
 
 dry and wet mud must be generated around and under water
 
-Recipies added
+Recipies need to be added
 
-Stripped logs for all trees added
+Stripped logs for all trees need to be added
 
 Code refactoring in init
 
