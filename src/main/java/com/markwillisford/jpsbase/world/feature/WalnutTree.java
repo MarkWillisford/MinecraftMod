@@ -19,7 +19,7 @@ public class WalnutTree extends Tree{
 			new SimpleBlockStateProvider(BlockInitNew.WALNUT_LOG.get().getDefaultState()), 
 			new SimpleBlockStateProvider(BlockInitNew.WALNUT_LEAVES.get().getDefaultState()), 
 			new BlobFoliagePlacer(1, 0)))				// leaf radius, 
-			.baseHeight(5)			// func_225569_d_	// baseHeight
+			.baseHeight(25)			// func_225569_d_	// baseHeight
 			.heightRandA(2)			// func_227354_b_	// heightRandA
 			.foliageHeight(10)		// func_227360_i_	// foliageHeight
 			.ignoreVines()			// func_227352_a_	// ignoreVines
@@ -28,14 +28,13 @@ public class WalnutTree extends Tree{
 	public static final TreeFeatureConfig WALNUT_TREE_CONFIG2 = (new TreeFeatureConfig.Builder(
 			new SimpleBlockStateProvider(BlockInitNew.WALNUT_LOG.get().getDefaultState()), 
 			new SimpleBlockStateProvider(BlockInitNew.WALNUT_LEAVES.get().getDefaultState()), 
-			// new AcaciaFoliagePlacer(2, 0)))
-			new WalnutFoliagePlacer(3, 0)))
-			.baseHeight(4)
+			new WalnutFoliagePlacer(2, 0)))
+			.baseHeight(5)
 			.heightRandA(2)
-			.foliageHeight(3)
+			.foliageHeight(0)
 			//.decorators(ImmutableList.of( 
 					// new LeaveVineTreeDecorator()))
-			//.trunkHeight(0)//.trunkHeightRandom(0).trunkTopOffsetRandom(0)
+			//.trunkHeight(1)//.trunkHeightRandom(0).trunkTopOffsetRandom(0)
 			.ignoreVines()
 			.setSapling((IPlantable)BlockInitNew.WALNUT_SAPLING.get()).build();
 	
@@ -44,15 +43,15 @@ public class WalnutTree extends Tree{
 		return Feature.NORMAL_TREE.withConfiguration(WALNUT_TREE_CONFIG2); 
 		
 	//@Override
-	//protected ConfiguredFeature<TreeFeatureConfig, ?> getTreeFeature(Random randomIn, boolean b) {
+	// protected ConfiguredFeature<TreeFeatureConfig, ?> getTreeFeature(Random randomIn, boolean b) {
 		// return Feature.FANCY_TREE.withConfiguration(WALNUT_TREE_CONFIG);					// NORMAL_TREE
 		// return Feature.NORMAL_TREE.withConfiguration(SPRUCE_TREE_CONFIG); 
 		// return Feature.ACACIA_TREE.withConfiguration(SPRUCE_TREE_CONFIG);
-		/*return randomIn.nextInt(10) == 0 
+		/*return randomIn.nextInt(10) == 0 	// between 0 inclusive and 10 exclusive
 				? Feature.NORMAL_TREE.withConfiguration(
-						b ? PINE_TREE_CONFIG : PINE_TREE_CONFIG
+						b ? WALNUT_TREE_CONFIG : WALNUT_TREE_CONFIG
 				) : Feature.NORMAL_TREE.withConfiguration(
-						b ? WALNUT_TREE_CONFIG : WALNUT_TREE_CONFIG);*/
+						b ? WALNUT_TREE_CONFIG2 : WALNUT_TREE_CONFIG2);*/
 	
 	
 	 }

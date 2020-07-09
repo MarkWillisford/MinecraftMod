@@ -33,3 +33,38 @@ public class ExampleBiome extends Biome{
 		DefaultBiomeFeatures.addExtraGoldOre(this);
 	}
 }
+
+
+/*you can then go into your custom biome and add it like this:
+ 
+
+public class MY_CUSTOM_BIOME extends Biome
+{
+	public MY_CUSTOM_BIOME
+    {
+    	super(Your biome.builder config stuff);
+      	// THIS IS WHAT YOU USE
+      	this.addFeature(
+          	Decoration.VEGETAL_DECORATION, 
+          	Biome.createDecoratedFeature(
+        		MyFeatures.CUSTOM_TREE, 
+          		IFeatureConfig.NO_FEATURE_CONFIG, 
+          		Placement.COUNT_EXTRA_HEIGHTMAP, 
+          		new AtSurfaceWithExtraConfig(0.4F, 10, 1));
+    }
+}
+or, if you want to add it to a biome that already exists (a vanilla biome)
+ 
+
+for (Biome biome : ForgeRegistries.BIOMES) 
+{
+        biome.addFeature(
+                Decoration.VEGETAL_DECORATION,
+                Biome.createDecoratedFeature(
+                        MyFeatures.CUSTOM_TREE,
+                        IFeatureConfig.NO_FEATURE_CONFIG,
+                        Placement.COUNT_EXTRA_HEIGHTMAP,
+                        new AtSurfaceWithExtraConfig(0.4F, 10, 1))
+        );
+}
+This code would go in your main mod file, under the FMLCommonSetupEvent (you probably called it init or something similar)*/

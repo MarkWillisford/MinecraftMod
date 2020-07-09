@@ -5,6 +5,7 @@ import org.apache.logging.log4j.Logger;
 
 import com.markwillisford.jpsbase.init.BlockInit;
 import com.markwillisford.jpsbase.init.BlockInitNew;
+import com.markwillisford.jpsbase.init.FeatureInit;
 import com.markwillisford.jpsbase.init.ItemInitNew;
 import com.markwillisford.jpsbase.world.gen.OreGen;
 
@@ -56,6 +57,7 @@ public class JPsBase
     	// ModTileEntityTypes.TILE_ENTITY_TYPES.register(modEventBus);
     	// BiomeInit.BIOMES.register(modEventBus);    	
     	// DimensionInit.MOD_DIMENSIONS.register(modEventBus);
+        FeatureInit.FEATURES.register(modEventBus);
         instance = this;
         
         // Register ourselves for server and other game events we are interested in

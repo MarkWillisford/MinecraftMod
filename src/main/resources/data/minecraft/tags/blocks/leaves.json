@@ -1,6 +1,15 @@
 {
   "replace": false,
   "values": [
-    "jpsbase:walnut_leaves"
+    "jpsbase:walnut_leaves",
+    "jpsbase:fir_leaves",
+    "jpsbase:mahogany_leaves",
+    "jpsbase:ancient_tree_leaves",
+    "jpsbase:pine_leaves",
+    "jpsbase:wenge_leaves",
+    "jpsbase:willow_leaves",
+    "jpsbase:maple_leaves",
+    "jpsbase:cherry_pink_leaves",
+    "jpsbase:cherry_white_leaves"
   ]
 }
