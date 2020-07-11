@@ -5,10 +5,12 @@ import java.util.Random;
 import com.markwillisford.jpsbase.init.BlockInitNew;
 import com.markwillisford.jpsbase.objects.placers.WalnutFoliagePlacer;
 
+import net.minecraft.block.Blocks;
 import net.minecraft.block.trees.Tree;
 import net.minecraft.world.gen.blockstateprovider.SimpleBlockStateProvider;
 import net.minecraft.world.gen.feature.ConfiguredFeature;
 import net.minecraft.world.gen.feature.Feature;
+import net.minecraft.world.gen.feature.HugeTreeFeatureConfig;
 import net.minecraft.world.gen.feature.TreeFeatureConfig;
 import net.minecraft.world.gen.foliageplacer.BlobFoliagePlacer;
 import net.minecraftforge.common.IPlantable;
@@ -37,11 +39,10 @@ public class WalnutTree extends Tree{
 			//.trunkHeight(1)//.trunkHeightRandom(0).trunkTopOffsetRandom(0)
 			.ignoreVines()
 			.setSapling((IPlantable)BlockInitNew.WALNUT_SAPLING.get()).build();
-	
+	   
 	@Override
 	protected ConfiguredFeature<TreeFeatureConfig, ?> getTreeFeature(Random randomIn, boolean b) {
-		return Feature.NORMAL_TREE.withConfiguration(WALNUT_TREE_CONFIG2); 
-		
+		return Feature.NORMAL_TREE.withConfiguration(WALNUT_TREE_CONFIG2);
 	//@Override
 	// protected ConfiguredFeature<TreeFeatureConfig, ?> getTreeFeature(Random randomIn, boolean b) {
 		// return Feature.FANCY_TREE.withConfiguration(WALNUT_TREE_CONFIG);					// NORMAL_TREE

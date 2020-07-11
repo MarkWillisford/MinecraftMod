@@ -9,6 +9,7 @@ import com.markwillisford.jpsbase.objects.placers.MahoganyFoliagePlacer;
 import net.minecraft.block.trees.Tree;
 import net.minecraft.world.gen.blockstateprovider.SimpleBlockStateProvider;
 import net.minecraft.world.gen.feature.ConfiguredFeature;
+import net.minecraft.world.gen.feature.Feature;
 import net.minecraft.world.gen.feature.TreeFeatureConfig;
 import net.minecraftforge.common.IPlantable;
 
@@ -31,7 +32,8 @@ public class MahoganyTree extends Tree {
 	@Override
 	protected ConfiguredFeature<TreeFeatureConfig, ?> getTreeFeature(
 			Random randomIn, boolean b) {
-		return FeatureInit.MAHOGANY_TREE_FEATURE.get()
-				.withConfiguration(MAHOGANY_TREE_CONFIG);
+		//return FeatureInit.MAHOGANY_TREE_FEATURE.get()			// TODO! Needs work on the branches
+		//		.withConfiguration(MAHOGANY_TREE_CONFIG);
+		return Feature.FANCY_TREE.withConfiguration(MAHOGANY_TREE_CONFIG);
 	}	
 }

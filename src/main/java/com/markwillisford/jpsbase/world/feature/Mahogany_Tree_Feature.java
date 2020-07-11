@@ -1,6 +1,7 @@
 package com.markwillisford.jpsbase.world.feature;
 
 import java.util.LinkedList;
+import java.util.Objects;
 import java.util.Optional;
 import java.util.Random;
 import java.util.Set;
@@ -16,6 +17,7 @@ import com.mojang.datafixers.Dynamic;
 import net.minecraft.block.LogBlock;
 import net.minecraft.util.Direction;
 import net.minecraft.util.math.BlockPos;
+import net.minecraft.util.math.MathHelper;
 import net.minecraft.util.math.MutableBoundingBox;
 import net.minecraft.world.gen.IWorldGenerationReader;
 import net.minecraft.world.gen.feature.AbstractSmallTreeFeature;
@@ -348,6 +350,74 @@ public class Mahogany_Tree_Feature extends AbstractSmallTreeFeature<TreeFeatureC
 		}
 	}
 	
+	private int makeBranch(IWorldGenerationReader generationReader,
+			Random rand, BlockPos saplingLoc, BlockPos saplingLocAddRandom4to15,
+			boolean TorF, Set<BlockPos> setPos1,
+			MutableBoundingBox boundingBoxIn, TreeFeatureConfig configIn) {
+		if (!TorF && Objects.equals(saplingLoc, saplingLocAddRandom4to15)) {
+			return -1;		// fails, probably on an error of some kind, edge case?
+		} else {
+			LOGGER.info("in makeBranch func ");
+			LOGGER.info("TorF " + TorF);
+			LOGGER.info("saplingLocAddRandom4to15 " + saplingLocAddRandom4to15);
+			LOGGER.info("saplingLoc " + saplingLoc);			
+			BlockPos blockpos = saplingLocAddRandom4to15.add(-saplingLoc.getX(),
+					-saplingLoc.getY(), -saplingLoc.getZ());
+			LOGGER.info("blockpos " + blockpos);	
+			
+			int i = this.getHighestAbsoluteValue(blockpos);		// highest int value difference between sapling and random location
+			LOGGER.info("i " + i);				
+			float f = (float) blockpos.getX() / (float) i;	
+			LOGGER.info("blockpos.getX() " + blockpos.getX());				
+			LOGGER.info("/i " + i + " =");				
+			LOGGER.info("f(x float) " + f);				
+			float f1 = (float) blockpos.getY() / (float) i;
+			LOGGER.info("blockpos.getY() " + blockpos.getY());				
+			LOGGER.info("/i " + i + " =");				
+			LOGGER.info("f1(y float) " + f1);	
+			float f2 = (float) blockpos.getZ() / (float) i;
+			LOGGER.info("blockpos.getZ() " + blockpos.getZ());				
+			LOGGER.info("/i " + i + " =");				
+			LOGGER.info("f2(z float) " + f2);	
+
+			// for each differant value between sap and randLoc
+			// create a pos that adds .5 + the diff multiplied by the divions above.
+			for (int j = 0; j <= i; ++j) {
+				BlockPos blockpos1 = saplingLoc.add(
+						(double) (0.5F + (float) j * f),
+						(double) (0.5F + (float) j * f1),
+						(double) (0.5F + (float) j * f2));
+				LOGGER.info("new pos " + blockpos1);	
+				if (TorF) {
+					LOGGER.info("is true; setting blockstate and adding to setPos1");		
+					this.setBlockState(generationReader, blockpos1,
+							configIn.trunkProvider
+									.getBlockState(rand, blockpos1)
+									.with(LogBlock.AXIS, this.func_227238_a_(
+											saplingLoc, blockpos1)),
+									boundingBoxIn);
+					setPos1.add(blockpos1);
+				} else if (!canBeReplacedByLogs(generationReader, blockpos1)) {
+					LOGGER.info("can't be replaced by logs, returning: " + j);						
+					return j;
+				}
+			}
+
+			LOGGER.info("reached end, returning: -1");	
+			return -1;
+		}
+	}
+	
+	private int getHighestAbsoluteValue(BlockPos p_227237_1_) {
+		int x = MathHelper.abs(p_227237_1_.getX());
+		int y = MathHelper.abs(p_227237_1_.getY());
+		int z = MathHelper.abs(p_227237_1_.getZ());
+		if (z > x && z > y) {
+			return z;
+		} else {
+			return y > x ? y : x;
+		}
+	}
 }
 
 
