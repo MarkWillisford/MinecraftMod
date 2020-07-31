@@ -23,13 +23,13 @@ public class TestJumpEvent {
 		
 		if(entityClassification == EntityClassification.MONSTER) {
 			// okay, now I know when a monster tries to spawn
-			JPsBase.LOGGER.info("********************************************************");
+			/*JPsBase.LOGGER.info("********************************************************");
 			JPsBase.LOGGER.info("testEvent fired");
 			JPsBase.LOGGER.info(entityString + " spawn at:");
 			JPsBase.LOGGER.info("x: " + x);
 			JPsBase.LOGGER.info("y: " + y);
 			JPsBase.LOGGER.info("z: " + z);
-			JPsBase.LOGGER.info(entityString + " is a:" + entityClassification + "!!  DENYING!");
+			JPsBase.LOGGER.info(entityString + " is a:" + entityClassification + "!!  DENYING!");*/
 			// and this stops the spawn
 			event.setResult(Result.DENY);
 		}

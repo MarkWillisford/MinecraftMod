@@ -53,11 +53,13 @@ public class JPsBase
     	modEventBus.addListener(this::doClientStuff);
 
     	ItemInitNew.ITEMS.register(modEventBus);
+    	// ItemInitNew.VANILLA_ITEMS.register(modEventBus);
     	BlockInitNew.BLOCKS.register(modEventBus);
     	// ModTileEntityTypes.TILE_ENTITY_TYPES.register(modEventBus);
     	// BiomeInit.BIOMES.register(modEventBus);    	
     	// DimensionInit.MOD_DIMENSIONS.register(modEventBus);
         FeatureInit.FEATURES.register(modEventBus);
+        FeatureInit.VANILLA_FEATURES.register(modEventBus);
         instance = this;
         
         // Register ourselves for server and other game events we are interested in

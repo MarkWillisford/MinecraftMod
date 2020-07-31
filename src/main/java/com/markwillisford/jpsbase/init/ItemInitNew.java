@@ -11,6 +11,10 @@ import net.minecraftforge.registries.ForgeRegistries;
 
 public class ItemInitNew {
 	public static final DeferredRegister<Item> ITEMS = new DeferredRegister<>(ForgeRegistries.ITEMS, JPsBase.MOD_ID);
+	// public static final DeferredRegister<Item> VANILLA_ITEMS = new DeferredRegister<>(ForgeRegistries.ITEMS, "minecraft");
 	
 	public static final RegistryObject<Item> DEF_ITEM = ITEMS.register("def_item", () -> new SpecialItem(new Item.Properties().group(TutorialItemGroup.instance)));
+
+	/*public static final RegistryObject<Item> COBBLESTONE = VANILLA_ITEMS
+			.register("cobblestone", () -> new SpecialItem(new Item.Properties().group(TutorialItemGroup.instance)));*/
 }
