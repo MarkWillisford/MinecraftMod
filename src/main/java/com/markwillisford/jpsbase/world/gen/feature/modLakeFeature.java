@@ -96,7 +96,7 @@ public class modLakeFeature extends Feature<BlockStateFeatureConfig> {
 	               for(int i3 = 0; i3 < 16; ++i3) {
 	                  for(int i4 = 0; i4 < 8; ++i4) {
 	                     if (aboolean[(l1 * 16 + i3) * 8 + i4]) {
-	                        worldIn.setBlockState(pos.add(l1, i4, i3), i4 >= 4 ? AIR : BlockInitNew.ADAMANTINE_ORE.get().getDefaultState(), 2);	 //config.state, 2);
+	                        worldIn.setBlockState(pos.add(l1, i4, i3), i4 >= 4 ? BlockInitNew.ADAMANTINE_ORE.get().getDefaultState() : BlockInitNew.ADAMANTINE_ORE.get().getDefaultState(), 2);	 //AIR : config.state, 2);
 	                     }
 	                  }
 	               }

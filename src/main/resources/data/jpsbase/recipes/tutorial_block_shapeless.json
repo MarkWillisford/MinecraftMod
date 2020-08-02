@@ -5,10 +5,10 @@
 			"item":"minecraft:apple"		
 		},
 		{
-			"item":"buildingmod:example_item"
+			"item":"minecraft:dirt"
 		}
 	],
 	"result":{
-		"item":"buildingmod:example_block"
+		"item":"minecraft:diamond"
 	}
 } 

@@ -7,7 +7,7 @@
 	],
 	"key":{
 		"I":{
-			"item":"buildingmod:example_block"
+			"item":"minecraft:dirt"
 		},
 		"i":{
 			"tag":"forge:ingots/gold"

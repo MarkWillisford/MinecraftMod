@@ -8,6 +8,7 @@ import com.markwillisford.jpsbase.init.BlockInitNew;
 import com.markwillisford.jpsbase.init.FeatureInit;
 import com.markwillisford.jpsbase.init.ItemInitNew;
 import com.markwillisford.jpsbase.world.gen.OreGen;
+import com.markwillisford.jpsbase.world.gen.TreeGen;
 
 import net.minecraft.block.Block;
 import net.minecraft.block.Blocks;
@@ -53,33 +54,16 @@ public class JPsBase
     	modEventBus.addListener(this::doClientStuff);
 
     	ItemInitNew.ITEMS.register(modEventBus);
-    	// ItemInitNew.VANILLA_ITEMS.register(modEventBus);
     	BlockInitNew.BLOCKS.register(modEventBus);
     	// ModTileEntityTypes.TILE_ENTITY_TYPES.register(modEventBus);
     	// BiomeInit.BIOMES.register(modEventBus);    	
     	// DimensionInit.MOD_DIMENSIONS.register(modEventBus);
         FeatureInit.FEATURES.register(modEventBus);
-        FeatureInit.VANILLA_FEATURES.register(modEventBus);
         instance = this;
         
         // Register ourselves for server and other game events we are interested in
         MinecraftForge.EVENT_BUS.register(this);      
 
-        LOGGER.info( "********************************************************************************" );
-        LOGGER.info( "********************************************************************************" );
-        LOGGER.info( "********************************************************************************" );
-        LOGGER.info( "********************************************************************************" );
-        LOGGER.info( "********************************************************************************" );
-        LOGGER.info( "********************************************************************************" );
-		for (Block block : ForgeRegistries.BLOCKS) {
-	        LOGGER.info( block );
-		}
-        LOGGER.info( "********************************************************************************" );
-        LOGGER.info( "********************************************************************************" );
-        LOGGER.info( "********************************************************************************" );
-        LOGGER.info( "********************************************************************************" );
-        LOGGER.info( "********************************************************************************" );
-        LOGGER.info( "********************************************************************************" );
     }
 
     @SubscribeEvent
@@ -96,7 +80,7 @@ public class JPsBase
     	//Block block = BlockInitNew.DEF_ITEM.get();
     	Item item = ItemInitNew.DEF_ITEM.get();
     	
-    	LOGGER.debug("Registered BlockItems");
+    	// LOGGER.debug("Registered BlockItems");
     }
 
     @SubscribeEvent
@@ -110,11 +94,12 @@ public class JPsBase
         LOGGER.info("HELLO FROM PREINIT");
         LOGGER.info("DIRT BLOCK >> {}", Blocks.DIRT.getRegistryName());
         OreGen.generateOre();
+        TreeGen.generateTrees();
     }
 
     private void doClientStuff(final FMLClientSetupEvent event) {
         // do something that can only be done on the client
-        LOGGER.info("Got game settings {}", event.getMinecraftSupplier().get().gameSettings);
+        // LOGGER.info("Got game settings {}", event.getMinecraftSupplier().get().gameSettings);
     }
 
     // You can use SubscribeEvent and let the Event Bus discover methods to call
@@ -126,7 +111,8 @@ public class JPsBase
     
     @SubscribeEvent
     public static void loadCompleteEvent(FMLLoadCompleteEvent event) {
-    	// OreGen.generateOre();
+    	OreGen.generateOre();
+        TreeGen.generateTrees();
     }
     
     public static class TutorialItemGroup extends ItemGroup{

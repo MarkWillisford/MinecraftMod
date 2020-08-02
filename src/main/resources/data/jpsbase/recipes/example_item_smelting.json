@@ -1,9 +1,9 @@
 {
 	"type":"minecraft:smelting",
 	"ingredient":{
-		"item":"buildingmod:example_block"		
+		"item":"jpsbase:mud_wet"		
 	},
-	"result":"buildingmod:example_item",
+	"result":"jpsbase:mud",
 	"experience":5.0,
 	"cookingtime":50
 }

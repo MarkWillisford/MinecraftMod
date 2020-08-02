@@ -3,7 +3,6 @@
 	"values":[
 		"minecraft:anvil",
 		"minecraft:chipped_anvil",
-		"minecraft:damaged_anvil",
-		"buildingmod:example_block"
+		"minecraft:damaged_anvil"
 	]
 }

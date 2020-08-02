@@ -6,9 +6,11 @@ import org.apache.logging.log4j.Logger;
 import com.markwillisford.jpsbase.JPsBase;
 import com.markwillisford.jpsbase.world.feature.FancyTreeTestingFeature;
 import com.markwillisford.jpsbase.world.feature.Mahogany_Tree_Feature;
+import com.markwillisford.jpsbase.world.gen.feature.modLakeFeature;
 
 import net.minecraft.world.gen.feature.AbstractSmallTreeFeature;
 import net.minecraft.world.gen.feature.AbstractTreeFeature;
+import net.minecraft.world.gen.feature.BlockStateFeatureConfig;
 import net.minecraft.world.gen.feature.Feature;
 import net.minecraft.world.gen.feature.IFeatureConfig;
 import net.minecraft.world.gen.feature.TreeFeatureConfig;
@@ -26,11 +28,11 @@ public abstract class FeatureInit<FC extends IFeatureConfig> extends net.minecra
 	public static final RegistryObject<AbstractSmallTreeFeature<TreeFeatureConfig>> MAHOGANY_TREE_FEATURE = FEATURES
 			.register("mahogany_tree_feature", () -> new Mahogany_Tree_Feature(
 					TreeFeatureConfig::deserializeFoliage));
-	public static final RegistryObject<AbstractTreeFeature<TreeFeatureConfig>> FANCY_TREE_TESTING_FEATURE = FEATURES
-			.register("fancy_tree_testing_feature", () -> new FancyTreeTestingFeature(
-					TreeFeatureConfig::deserializeFoliage));
+	//public static final RegistryObject<AbstractTreeFeature<TreeFeatureConfig>> FANCY_TREE_TESTING_FEATURE = FEATURES
+	//		.register("fancy_tree_testing_feature", () -> new FancyTreeTestingFeature(
+	//				TreeFeatureConfig::deserializeFoliage));
 	
 
-	/*public static final RegistryObject<Feature<BlockStateFeatureConfig>> LAKE = VANILLA_FEATURES
-			.register("lake", () -> new modLakeFeature(BlockStateFeatureConfig::deserialize));*/
+	//public static final RegistryObject<Feature<BlockStateFeatureConfig>> LAKE = VANILLA_FEATURES
+	//		.register("lake", () -> new modLakeFeature(BlockStateFeatureConfig::deserialize));
 }

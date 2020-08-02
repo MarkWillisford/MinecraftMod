@@ -29,7 +29,7 @@ public class BlockInit {
 		event.getRegistry().register(new SpecalBlock(Block.Properties.create(Material.WOOD).hardnessAndResistance(2.0F)
 				.harvestTool(ToolType.AXE).harvestLevel(2).sound(SoundType.GLASS).lightValue(4)
 				.slipperiness(1.2f).noDrops()).setRegistryName("specal_block"));
-		
+
 	}
 	
 	@SubscribeEvent

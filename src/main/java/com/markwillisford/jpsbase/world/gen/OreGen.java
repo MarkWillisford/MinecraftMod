@@ -1,5 +1,8 @@
 package com.markwillisford.jpsbase.world.gen;
 
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
+
 import com.markwillisford.jpsbase.init.BlockInitNew;
 
 import net.minecraft.world.biome.Biome;
@@ -14,6 +17,7 @@ import net.minecraft.world.gen.placement.Placement;
 import net.minecraftforge.registries.ForgeRegistries;
 
 public class OreGen {
+	public static final Logger LOGGER = LogManager.getLogger();
 	public static void generateOre() {
 		for (Biome biome : ForgeRegistries.BIOMES) {
 			// Diamond: 8 - 1, 0, 0, 16
