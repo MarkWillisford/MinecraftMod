@@ -3,12 +3,16 @@ package com.markwillisford.jpsbase.world.gen;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 
+import com.google.common.collect.ImmutableList;
+import com.markwillisford.jpsbase.world.feature.MahoganyTree;
+import com.markwillisford.jpsbase.world.feature.WengeTree;
 import com.markwillisford.jpsbase.world.feature.WillowTree;
 
 import net.minecraft.world.biome.Biome;
 import net.minecraft.world.biome.Biomes;
 import net.minecraft.world.gen.GenerationStage;
 import net.minecraft.world.gen.feature.Feature;
+import net.minecraft.world.gen.feature.MultipleRandomFeatureConfig;
 import net.minecraft.world.gen.placement.AtSurfaceWithExtraConfig;
 import net.minecraft.world.gen.placement.Placement;
 import net.minecraftforge.registries.ForgeRegistries;
@@ -22,22 +26,44 @@ public class TreeGen {
 		
 			// Fir Trees in 
 		
-			// Mahogany Trees in 
-		
 			// Maple Trees in 
 		
 			// Pine Trees in 
 		
 			// Walnut Tree's in 
 		
-			// Wenge Tree's in 
-		
+			// Wenge and mahogany Trees in 
+			if (biome == Biomes.SAVANNA || 
+				biome == Biomes.SAVANNA_PLATEAU ||
+				biome == Biomes.SHATTERED_SAVANNA ||
+				biome == Biomes.SHATTERED_SAVANNA_PLATEAU) {
+				//biome.addFeature(GenerationStage.Decoration.VEGETAL_DECORATION, Feature.RANDOM_SELECTOR.withConfiguration(
+				//		new MultipleRandomFeatureConfig(ImmutableList.of(
+				//			Feature.FANCY_TREE.withConfiguration(MahoganyTree.MAHOGANY_TREE_CONFIG).withChance(0.05F), 
+				//			Feature.ACACIA_TREE.withConfiguration(WengeTree.WENGE_TREE_CONFIG).withChance(0.15F)
+				//		), null)).withPlacement(Placement.COUNT_EXTRA_HEIGHTMAP.configure(new AtSurfaceWithExtraConfig(5, 0.1F, 1))));
+				biome.addFeature(GenerationStage.Decoration.VEGETAL_DECORATION, Feature.RANDOM_SELECTOR.withConfiguration(
+						new MultipleRandomFeatureConfig(ImmutableList.of(
+							Feature.ACACIA_TREE.withConfiguration(MahoganyTree.MAHOGANY_TREE_CONFIG_A).withChance(0.25F)), 
+							Feature.ACACIA_TREE.withConfiguration(WengeTree.WENGE_TREE_CONFIG))
+						).withPlacement(Placement.COUNT_EXTRA_HEIGHTMAP.configure(new AtSurfaceWithExtraConfig(1, 0.1F, 1))));
+				      
+				
+				
+				
+				
+				
+				
+				//biome.addFeature(GenerationStage.Decoration.VEGETAL_DECORATION, Feature.FANCY_TREE.withConfiguration(
+				//		MahoganyTree.MAHOGANY_TREE_CONFIG).withPlacement(Placement.COUNT_EXTRA_HEIGHTMAP.configure(new AtSurfaceWithExtraConfig(1, 0.1F, 1))));
+				//biome.addFeature(GenerationStage.Decoration.VEGETAL_DECORATION, Feature.ACACIA_TREE.withConfiguration(
+				//		WengeTree.WENGE_TREE_CONFIG).withPlacement(Placement.COUNT_EXTRA_HEIGHTMAP.configure(new AtSurfaceWithExtraConfig(1, 0.1F, 1))));
+			}
 			// Willow Tree in swamps
 			if (biome == Biomes.SWAMP ||
 				biome == Biomes.SWAMP_HILLS) {
 				biome.addFeature(GenerationStage.Decoration.VEGETAL_DECORATION, Feature.NORMAL_TREE.withConfiguration(
-						WillowTree.WILLOW_TREE_CONFIG2).withPlacement(Placement.COUNT_EXTRA_HEIGHTMAP.configure(new AtSurfaceWithExtraConfig(1, 0.1F, 1))));
-				      
+						WillowTree.WILLOW_TREE_CONFIG).withPlacement(Placement.COUNT_EXTRA_HEIGHTMAP.configure(new AtSurfaceWithExtraConfig(1, 0.1F, 1))));
 			}			
 		}
 		// Willow Tree along rivers
