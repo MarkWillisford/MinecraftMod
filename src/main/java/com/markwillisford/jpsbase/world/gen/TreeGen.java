@@ -4,7 +4,10 @@ import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 
 import com.google.common.collect.ImmutableList;
+import com.markwillisford.jpsbase.world.feature.CherryPinkTree;
+import com.markwillisford.jpsbase.world.feature.CherryWhiteTree;
 import com.markwillisford.jpsbase.world.feature.MahoganyTree;
+import com.markwillisford.jpsbase.world.feature.MapleTree;
 import com.markwillisford.jpsbase.world.feature.WalnutTree;
 import com.markwillisford.jpsbase.world.feature.WengeTree;
 import com.markwillisford.jpsbase.world.feature.WillowTree;
@@ -25,7 +28,13 @@ public class TreeGen {
 		for (Biome biome : ForgeRegistries.BIOMES) {
 			// Cherry Trees
 			if (biome == Biomes.FLOWER_FOREST) {
-				
+				biome.addFeature(GenerationStage.Decoration.VEGETAL_DECORATION, Feature.RANDOM_SELECTOR.withConfiguration(
+					new MultipleRandomFeatureConfig(ImmutableList.of(
+						Feature.NORMAL_TREE.withConfiguration(CherryPinkTree.CHERRY_PINK_TREE_CONFIG).withChance(0.5F),
+						Feature.FANCY_TREE.withConfiguration(CherryPinkTree.FANCY_CHERRY_PINK_TREE_CONFIG).withChance(0.1F),
+						Feature.FANCY_TREE.withConfiguration(CherryWhiteTree.FANCY_CHERRY_WHITE_TREE_CONFIG).withChance(0.1F)), 
+						Feature.NORMAL_TREE.withConfiguration(CherryWhiteTree.CHERRY_WHITE_TREE_CONFIG))
+					).withPlacement(Placement.COUNT_EXTRA_HEIGHTMAP.configure(new AtSurfaceWithExtraConfig(1, 0.5F, 1))));			
 			}
 			// Fir Trees in 
 				//if (biome == Biomes.SNOWY_TAIGA || 
@@ -41,7 +50,18 @@ public class TreeGen {
 					//		).withPlacement(Placement.COUNT_EXTRA_HEIGHTMAP.configure(new AtSurfaceWithExtraConfig(1, 0.1F, 1))));
 				//}
 			// Maple Trees in 
-		
+			if (biome == Biomes.FOREST) {
+				biome.addFeature(GenerationStage.Decoration.VEGETAL_DECORATION, Feature.RANDOM_SELECTOR.withConfiguration(
+					new MultipleRandomFeatureConfig(ImmutableList.of(
+						Feature.NORMAL_TREE.withConfiguration(CherryPinkTree.CHERRY_PINK_TREE_CONFIG).withChance(0.3F),
+						Feature.FANCY_TREE.withConfiguration(CherryPinkTree.FANCY_CHERRY_PINK_TREE_CONFIG).withChance(0.03F),
+						Feature.FANCY_TREE.withConfiguration(CherryWhiteTree.FANCY_CHERRY_WHITE_TREE_CONFIG).withChance(0.03F),
+						Feature.NORMAL_TREE.withConfiguration(MapleTree.MAPLE_TREE_CONFIG).withChance(0.3F),
+						Feature.FANCY_TREE.withConfiguration(MapleTree.FANCY_MAPLE_TREE_CONFIG).withChance(0.03F)), 
+						Feature.NORMAL_TREE.withConfiguration(CherryWhiteTree.CHERRY_WHITE_TREE_CONFIG))
+					).withPlacement(Placement.COUNT_EXTRA_HEIGHTMAP.configure(new AtSurfaceWithExtraConfig(0, 0.7F, 1))));			
+			}
+			
 			// Pine Trees in 
 		
 			// Walnut Tree's in 
