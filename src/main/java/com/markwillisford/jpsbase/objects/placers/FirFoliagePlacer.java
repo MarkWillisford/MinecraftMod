@@ -14,7 +14,7 @@ import net.minecraft.world.gen.foliageplacer.FoliagePlacer;
 import net.minecraft.world.gen.foliageplacer.FoliagePlacerType;
 
 public class FirFoliagePlacer extends FoliagePlacer {
-	public static final Logger LOGGER = LogManager.getLogger();
+	// public static final Logger LOGGER = LogManager.getLogger();
 	
 	public FirFoliagePlacer(int radius, int radiusPlusRand) {
     	super(radius, radiusPlusRand, FoliagePlacerType.BLOB);
@@ -24,9 +24,6 @@ public class FirFoliagePlacer extends FoliagePlacer {
 	public void func_225571_a_(IWorldGenerationReader p_225571_1_, Random p_225571_2_, TreeFeatureConfig p_225571_3_,
 		int heigthOfLogs, int p_225571_5_, int p_225571_6_, BlockPos saplingLoc, Set<BlockPos> p_225571_8_) {
 
-        LOGGER.info( "********************************************************************************" );
-        LOGGER.info( "********************************************************************************" );
-        LOGGER.info( "********************************************************************************" );
 		for(int i = 0;i<3;i++) {
     		p_225571_1_.setBlockState(saplingLoc.add(0, heigthOfLogs+i, 0), p_225571_3_.leavesProvider.getBlockState(p_225571_2_, saplingLoc), 2);
 		}
@@ -84,17 +81,12 @@ public class FirFoliagePlacer extends FoliagePlacer {
             		BlockPos pos = new BlockPos(saplingLoc.add(i, heigthOfLogs-5, j));   
             		BlockState blockstate = ((net.minecraft.world.IWorld)p_225571_1_).getWorld().getBlockState(pos);
             		//if(BlockTags.LOGS.contains(blockstate.getBlock())) {
-            			LOGGER.info("Blockstate: " + blockstate);
-            			LOGGER.info("Block: " + blockstate.getBlock());
-            			LOGGER.info("pos: " + pos);
+            		
             		//}
             		p_225571_1_.setBlockState(saplingLoc.add(i, heigthOfLogs-5, j), p_225571_3_.leavesProvider.getBlockState(p_225571_2_, saplingLoc), 2);  
             	}
             }
         }
-        LOGGER.info( "********************************************************************************" );
-        LOGGER.info( "********************************************************************************" );
-        LOGGER.info( "********************************************************************************" );
 	}
 	
 	@Override

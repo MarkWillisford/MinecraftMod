@@ -14,7 +14,7 @@ import net.minecraft.world.gen.foliageplacer.FoliagePlacer;
 import net.minecraft.world.gen.foliageplacer.FoliagePlacerType;
 
 public class PineFoliagePlacer extends FoliagePlacer {
-	public static final Logger LOGGER = LogManager.getLogger();
+	// public static final Logger LOGGER = LogManager.getLogger();
 	
 	public PineFoliagePlacer(int radius, int radiusPlusRand) {
     	super(radius, radiusPlusRand, FoliagePlacerType.BLOB);
@@ -37,12 +37,10 @@ public class PineFoliagePlacer extends FoliagePlacer {
 		p_225571_1_.setBlockState(topLog.add(0, 0, 1), p_225571_3_.leavesProvider.getBlockState(p_225571_2_, saplingLoc), 2);
 		p_225571_1_.setBlockState(topLog.add(0, 0, -1), p_225571_3_.leavesProvider.getBlockState(p_225571_2_, saplingLoc), 2);
 
-        LOGGER.info("heigthOfLogs-3: " + (heigthOfLogs-3));
         Random rand = new Random();
         int branchCount = 0;
 		//for(int i = heigthOfLogs-1; i >= 3; i--) {
 		for(int i = 3; i <= heigthOfLogs-1; i++) {
-            LOGGER.info( "i: " + i);
 			if((heigthOfLogs-i)%2 == 0) {
 				for(int x = -1; x<=1; x++) {        	
 		        	for(int z = -1; z<=1; z++) {
