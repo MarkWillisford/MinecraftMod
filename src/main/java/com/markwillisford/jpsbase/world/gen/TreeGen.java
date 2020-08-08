@@ -46,8 +46,8 @@ public class TreeGen {
 				biome == Biomes.SNOWY_TAIGA_HILLS ||
 				biome == Biomes.SNOWY_TAIGA_MOUNTAINS) {
 				biome.addFeature(GenerationStage.Decoration.VEGETAL_DECORATION, Feature.NORMAL_TREE.withConfiguration(
-					//PineTree.PINE_TREE_CONFIG).withPlacement(Placement.COUNT_EXTRA_HEIGHTMAP.configure(new AtSurfaceWithExtraConfig(1, 0.5F, 1))));
-					FirTree.FIR_TREE_CONFIG).withPlacement(Placement.COUNT_EXTRA_HEIGHTMAP.configure(new AtSurfaceWithExtraConfig(1, 0.5F, 1))));
+					PineTree.PINE_TREE_CONFIG).withPlacement(Placement.COUNT_EXTRA_HEIGHTMAP.configure(new AtSurfaceWithExtraConfig(1, 0.5F, 1))));
+					//FirTree.FIR_TREE_CONFIG).withPlacement(Placement.COUNT_EXTRA_HEIGHTMAP.configure(new AtSurfaceWithExtraConfig(1, 0.5F, 1))));
 			}
 				//if (biome == Biomes.SNOWY_TAIGA || 
 				//	biome == Biomes.SNOWY_TAIGA_HILLS ||
