@@ -92,8 +92,8 @@ public class OreGen {
 				biome.addFeature(GenerationStage.Decoration.UNDERGROUND_ORES, 
 						Feature.DISK.withConfiguration(new SphereReplaceConfig(
 								BlockInitNew.MUD_WET.get().getDefaultState(), 4, 1, 
-								Lists.newArrayList(Blocks.DIRT.getDefaultState(), Blocks.CLAY.getDefaultState())))
-						.withPlacement(Placement.COUNT_TOP_SOLID.configure(new FrequencyConfig(1))));
+								Lists.newArrayList(Blocks.DIRT.getDefaultState(), Blocks.DIRT.getDefaultState())))
+						.withPlacement(Placement.COUNT_TOP_SOLID.configure(new FrequencyConfig(3))));
 			}
 		}
 	}
