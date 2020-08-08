@@ -35,7 +35,7 @@ public class FirFoliagePlacer extends FoliagePlacer {
 		p_225571_1_.setBlockState(saplingLoc.add(0, heigthOfLogs, -1), p_225571_3_.leavesProvider.getBlockState(p_225571_2_, saplingLoc), 2);
         
         // 3 x 3 square		
-        for(int i = -1; i<=1; i++) {        	
+        for(int i = -1; i<=1; i++) {       	
         	for(int j = -1; j<=1; j++) {
         		p_225571_1_.setBlockState(saplingLoc.add(i, heigthOfLogs-1, j), p_225571_3_.leavesProvider.getBlockState(p_225571_2_, saplingLoc), 2);  
         	}
@@ -76,13 +76,8 @@ public class FirFoliagePlacer extends FoliagePlacer {
 	    
         if(heigthOfLogs >= 7) {
         	// 3 x 3 square
-            for(int i = -1; i<=1; i++) {        	
-            	for(int j = -1; j<=1; j++) {	
-            		BlockPos pos = new BlockPos(saplingLoc.add(i, heigthOfLogs-5, j));   
-            		BlockState blockstate = ((net.minecraft.world.IWorld)p_225571_1_).getWorld().getBlockState(pos);
-            		//if(BlockTags.LOGS.contains(blockstate.getBlock())) {
-            		
-            		//}
+            for(int i = -1; i<=1; i++) {     	
+            	for(int j = -1; j<=1; j++) {
             		p_225571_1_.setBlockState(saplingLoc.add(i, heigthOfLogs-5, j), p_225571_3_.leavesProvider.getBlockState(p_225571_2_, saplingLoc), 2);  
             	}
             }

@@ -38,29 +38,19 @@ public class TreeGen {
 						Feature.NORMAL_TREE.withConfiguration(CherryWhiteTree.CHERRY_WHITE_TREE_CONFIG))
 					).withPlacement(Placement.COUNT_EXTRA_HEIGHTMAP.configure(new AtSurfaceWithExtraConfig(1, 0.5F, 1))));			
 			}
-			// Fir Trees in 
+			// Fir and Pine Trees in 
 			if (biome == Biomes.TAIGA ||
 				biome == Biomes.TAIGA_HILLS ||
 				biome == Biomes.TAIGA_MOUNTAINS ||
 				biome == Biomes.SNOWY_TAIGA ||
 				biome == Biomes.SNOWY_TAIGA_HILLS ||
 				biome == Biomes.SNOWY_TAIGA_MOUNTAINS) {
-				biome.addFeature(GenerationStage.Decoration.VEGETAL_DECORATION, Feature.NORMAL_TREE.withConfiguration(
-					PineTree.PINE_TREE_CONFIG).withPlacement(Placement.COUNT_EXTRA_HEIGHTMAP.configure(new AtSurfaceWithExtraConfig(1, 0.5F, 1))));
-					//FirTree.FIR_TREE_CONFIG).withPlacement(Placement.COUNT_EXTRA_HEIGHTMAP.configure(new AtSurfaceWithExtraConfig(1, 0.5F, 1))));
+				biome.addFeature(GenerationStage.Decoration.VEGETAL_DECORATION, Feature.RANDOM_SELECTOR.withConfiguration(
+					new MultipleRandomFeatureConfig(ImmutableList.of(
+						Feature.NORMAL_TREE.withConfiguration(FirTree.FIR_TREE_CONFIG).withChance(0.5F)), 
+						Feature.NORMAL_TREE.withConfiguration(PineTree.PINE_TREE_CONFIG))
+					).withPlacement(Placement.COUNT_EXTRA_HEIGHTMAP.configure(new AtSurfaceWithExtraConfig(3, 0.7F, 1))));
 			}
-				//if (biome == Biomes.SNOWY_TAIGA || 
-				//	biome == Biomes.SNOWY_TAIGA_HILLS ||
-				//	biome == Biomes.SNOWY_TAIGA_MOUNTAINS) {
-				//	biome.addFeature(GenerationStage.Decoration.VEGETAL_DECORATION, Feature.NORMAL_TREE.withConfiguration(
-				//			FirTree.FIR_TREE_CONFIG).withPlacement(Placement.COUNT_EXTRA_HEIGHTMAP.configure(new AtSurfaceWithExtraConfig(1, 0.1F, 1))));
-				
-					//biome.addFeature(GenerationStage.Decoration.VEGETAL_DECORATION, Feature.RANDOM_SELECTOR.withConfiguration(
-					//		new MultipleRandomFeatureConfig(ImmutableList.of(
-					//			Feature.NORMAL_TREE.withConfiguration(FirTree.FIR_TREE_CONFIG).withChance(0.33F)), 
-					//			Feature.NORMAL_TREE.withConfiguration(PineTree.PINE_TREE_CONFIG))
-					//		).withPlacement(Placement.COUNT_EXTRA_HEIGHTMAP.configure(new AtSurfaceWithExtraConfig(1, 0.1F, 1))));
-				//}
 			// Maple Trees in 
 			if (biome == Biomes.FOREST) {
 				biome.addFeature(GenerationStage.Decoration.VEGETAL_DECORATION, Feature.RANDOM_SELECTOR.withConfiguration(
@@ -73,8 +63,6 @@ public class TreeGen {
 						Feature.NORMAL_TREE.withConfiguration(CherryWhiteTree.CHERRY_WHITE_TREE_CONFIG))
 					).withPlacement(Placement.COUNT_EXTRA_HEIGHTMAP.configure(new AtSurfaceWithExtraConfig(1, 1.0F, 1))));	
 			}
-			
-			// Pine Trees in 
 		
 			// Walnut Tree's in 
 			if (biome == Biomes.PLAINS) {

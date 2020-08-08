@@ -17,6 +17,7 @@ public class FirTree extends Tree{
 			new SimpleBlockStateProvider(BlockInitNew.FIR_LOG.get().getDefaultState()), 
 			new SimpleBlockStateProvider(BlockInitNew.FIR_LEAVES.get().getDefaultState()), 
 			new FirFoliagePlacer(2, 0)))
+			//new BlobFoliagePlacer(2,0)))
 			.baseHeight(5)
 			.heightRandA(2)
 			//.trunkTopOffset(1)
