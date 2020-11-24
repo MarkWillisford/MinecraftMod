@@ -1,0 +1,14 @@
+{
+	"type":"minecraft:crafting_shaped",
+  "pattern": [
+    "SS"
+  ],
+  "key": {
+    "S": {
+      "item": "jpsbase:slate"
+    }
+  },
+	"result":{
+		"item":"jpsbase:slate_pressure_plate"
+	}
+} 

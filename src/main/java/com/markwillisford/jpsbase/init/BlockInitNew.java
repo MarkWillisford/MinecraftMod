@@ -1,6 +1,8 @@
 package com.markwillisford.jpsbase.init;
 
 import com.markwillisford.jpsbase.JPsBase;
+import com.markwillisford.jpsbase.objects.blocks.BlockQuarry;
+import com.markwillisford.jpsbase.objects.blocks.ExampleChestBlock;
 import com.markwillisford.jpsbase.objects.blocks.FallingSlabBlock;
 import com.markwillisford.jpsbase.objects.blocks.FallingStairBlock;
 import com.markwillisford.jpsbase.objects.blocks.ModCarpetBlock;
@@ -40,73 +42,77 @@ import net.minecraftforge.registries.ForgeRegistries;
 public class BlockInitNew {
 	public static final DeferredRegister<Block> BLOCKS = new DeferredRegister<>(ForgeRegistries.BLOCKS, JPsBase.MOD_ID);
 	
+	public static final RegistryObject<Block> QUARRY = BLOCKS.register("quarry",
+			() -> new BlockQuarry(Block.Properties.create(Material.IRON)));
+	public static final RegistryObject<Block> EXAMPLE_CHEST = BLOCKS.register("example_chest",
+			() -> new ExampleChestBlock(Block.Properties.from(BlockInitNew.QUARRY.get())));
 	// public static final RegistryObject<Block> DEF_ITEM = BLOCKS.register("def_block", () -> new Block(Block.Properties.create(Material.IRON)));
 	
 	// Stones and Slates
-	public static final RegistryObject<Block> MARBLE = BLOCKS.register("marble", () -> new Block(Block.Properties.create(Material.ROCK)));
-	public static final RegistryObject<Block> MARBLE_SLAB = BLOCKS.register("marble_slab", () -> new SlabBlock(Block.Properties.create(Material.ROCK)));
-	public static final RegistryObject<Block> MARBLE_STAIRS = BLOCKS.register("marble_stairs", () -> new StairsBlock(() -> Blocks.STONE.getDefaultState(), Block.Properties.create(Material.ROCK, MaterialColor.STONE)));
-	public static final RegistryObject<Block> MARBLE_BUTTON = BLOCKS.register("marble_button", () -> new ModWoodButtonBlock(Block.Properties.create(Material.ROCK, MaterialColor.STONE)));
-	public static final RegistryObject<Block> MARBLE_PRESSURE_PLATE = BLOCKS.register("marble_pressure_plate", () -> new ModPressurePlateBlock(Sensitivity.EVERYTHING, Block.Properties.create(Material.ROCK, MaterialColor.STONE)));
-	public static final RegistryObject<Block> MARBLE_VERTICAL_SLAB = BLOCKS.register("marble_vertical_slab", () -> new VerticalSlabBlock(Block.Properties.create(Material.ROCK)));
-	public static final RegistryObject<Block> MARBLE_STEP = BLOCKS.register("marble_step", () -> new StepBlock(Block.Properties.create(Material.ROCK, MaterialColor.STONE)));
-	public static final RegistryObject<Block> MARBLE_WALL = BLOCKS.register("marble_wall", () -> new WallBlock(Block.Properties.from(Blocks.STONE)));
+	public static final RegistryObject<Block> MARBLE = BLOCKS.register("marble", () -> new Block(Block.Properties.create(Material.ROCK).hardnessAndResistance(1.25f, 7.25f)));
+	public static final RegistryObject<Block> MARBLE_SLAB = BLOCKS.register("marble_slab", () -> new SlabBlock(Block.Properties.create(Material.ROCK).hardnessAndResistance(1.25f, 7.25f)));
+	public static final RegistryObject<Block> MARBLE_STAIRS = BLOCKS.register("marble_stairs", () -> new StairsBlock(() -> Blocks.STONE.getDefaultState(), Block.Properties.create(Material.ROCK, MaterialColor.STONE).hardnessAndResistance(1.25f, 7.25f)));
+	public static final RegistryObject<Block> MARBLE_BUTTON = BLOCKS.register("marble_button", () -> new ModWoodButtonBlock(Block.Properties.create(Material.ROCK, MaterialColor.STONE).hardnessAndResistance(1.25f, 7.25f)));
+	public static final RegistryObject<Block> MARBLE_PRESSURE_PLATE = BLOCKS.register("marble_pressure_plate", () -> new ModPressurePlateBlock(Sensitivity.EVERYTHING, Block.Properties.create(Material.ROCK, MaterialColor.STONE).hardnessAndResistance(1.25f, 7.25f)));
+	public static final RegistryObject<Block> MARBLE_VERTICAL_SLAB = BLOCKS.register("marble_vertical_slab", () -> new VerticalSlabBlock(Block.Properties.create(Material.ROCK).hardnessAndResistance(1.25f, 7.25f)));
+	public static final RegistryObject<Block> MARBLE_STEP = BLOCKS.register("marble_step", () -> new StepBlock(Block.Properties.create(Material.ROCK, MaterialColor.STONE).hardnessAndResistance(1.25f, 7.25f)));
+	public static final RegistryObject<Block> MARBLE_WALL = BLOCKS.register("marble_wall", () -> new WallBlock(Block.Properties.from(Blocks.STONE).hardnessAndResistance(1.25f, 7.25f)));
 	
-	public static final RegistryObject<Block> MARBLE_POLISHED = BLOCKS.register("marble_polished", () -> new Block(Block.Properties.create(Material.ROCK)));
-	public static final RegistryObject<Block> MARBLE_POLISHED_SLAB = BLOCKS.register("marble_polished_slab", () -> new SlabBlock(Block.Properties.create(Material.ROCK)));
-	public static final RegistryObject<Block> MARBLE_POLISHED_STAIRS = BLOCKS.register("marble_polished_stairs", () -> new StairsBlock(() -> Blocks.STONE.getDefaultState(), Block.Properties.create(Material.ROCK, MaterialColor.STONE)));
-	public static final RegistryObject<Block> MARBLE_POLISHED_BUTTON = BLOCKS.register("marble_polished_button", () -> new ModWoodButtonBlock(Block.Properties.create(Material.ROCK, MaterialColor.STONE)));
-	public static final RegistryObject<Block> MARBLE_POLISHED_PRESSURE_PLATE = BLOCKS.register("marble_polished_pressure_plate", () -> new ModPressurePlateBlock(Sensitivity.EVERYTHING, Block.Properties.create(Material.ROCK, MaterialColor.STONE)));
-	public static final RegistryObject<Block> MARBLE_POLISHED_VERTICAL_SLAB = BLOCKS.register("marble_polished_vertical_slab", () -> new VerticalSlabBlock(Block.Properties.create(Material.ROCK)));
-	public static final RegistryObject<Block> MARBLE_POLISHED_STEP = BLOCKS.register("marble_polished_step", () -> new StepBlock(Block.Properties.create(Material.ROCK, MaterialColor.STONE)));
-	public static final RegistryObject<Block> MARBLE_POLISHED_WALL = BLOCKS.register("marble_polished_wall", () -> new WallBlock(Block.Properties.from(Blocks.STONE)));
+	public static final RegistryObject<Block> MARBLE_POLISHED = BLOCKS.register("marble_polished", () -> new Block(Block.Properties.create(Material.ROCK).hardnessAndResistance(1.25f, 7.25f)));
+	public static final RegistryObject<Block> MARBLE_POLISHED_SLAB = BLOCKS.register("marble_polished_slab", () -> new SlabBlock(Block.Properties.create(Material.ROCK).hardnessAndResistance(1.25f, 7.25f)));
+	public static final RegistryObject<Block> MARBLE_POLISHED_STAIRS = BLOCKS.register("marble_polished_stairs", () -> new StairsBlock(() -> Blocks.STONE.getDefaultState(), Block.Properties.create(Material.ROCK, MaterialColor.STONE).hardnessAndResistance(1.25f, 7.25f)));
+	public static final RegistryObject<Block> MARBLE_POLISHED_BUTTON = BLOCKS.register("marble_polished_button", () -> new ModWoodButtonBlock(Block.Properties.create(Material.ROCK, MaterialColor.STONE).hardnessAndResistance(1.25f, 7.25f)));
+	public static final RegistryObject<Block> MARBLE_POLISHED_PRESSURE_PLATE = BLOCKS.register("marble_polished_pressure_plate", () -> new ModPressurePlateBlock(Sensitivity.EVERYTHING, Block.Properties.create(Material.ROCK, MaterialColor.STONE).hardnessAndResistance(1.25f, 7.25f)));
+	public static final RegistryObject<Block> MARBLE_POLISHED_VERTICAL_SLAB = BLOCKS.register("marble_polished_vertical_slab", () -> new VerticalSlabBlock(Block.Properties.create(Material.ROCK).hardnessAndResistance(1.25f, 7.25f)));
+	public static final RegistryObject<Block> MARBLE_POLISHED_STEP = BLOCKS.register("marble_polished_step", () -> new StepBlock(Block.Properties.create(Material.ROCK, MaterialColor.STONE).hardnessAndResistance(1.25f, 7.25f)));
+	public static final RegistryObject<Block> MARBLE_POLISHED_WALL = BLOCKS.register("marble_polished_wall", () -> new WallBlock(Block.Properties.from(Blocks.STONE).hardnessAndResistance(1.25f, 7.25f)));
 
 	// blue + Hue 20, Saturation -5
-	public static final RegistryObject<Block> SLATE = BLOCKS.register("slate", () -> new Block(Block.Properties.create(Material.ROCK)));
-	public static final RegistryObject<Block> SLATE_SLAB = BLOCKS.register("slate_slab", () -> new SlabBlock(Block.Properties.create(Material.ROCK)));
-	public static final RegistryObject<Block> SLATE_STAIRS = BLOCKS.register("slate_stairs", () -> new StairsBlock(() -> Blocks.STONE.getDefaultState(), Block.Properties.create(Material.ROCK, MaterialColor.STONE)));
+	public static final RegistryObject<Block> SLATE = BLOCKS.register("slate", () -> new Block(Block.Properties.create(Material.ROCK).hardnessAndResistance(1.25f, 4.2f)));
+	public static final RegistryObject<Block> SLATE_SLAB = BLOCKS.register("slate_slab", () -> new SlabBlock(Block.Properties.create(Material.ROCK).hardnessAndResistance(1.25f, 4.2f)));
+	public static final RegistryObject<Block> SLATE_STAIRS = BLOCKS.register("slate_stairs", () -> new StairsBlock(() -> Blocks.STONE.getDefaultState(), Block.Properties.create(Material.ROCK, MaterialColor.STONE).hardnessAndResistance(1.25f, 4.2f)));
 	public static final RegistryObject<Block> SLATE_BUTTON = BLOCKS.register("slate_button", () -> new ModWoodButtonBlock(Block.Properties.create(Material.ROCK, MaterialColor.STONE)));
 	public static final RegistryObject<Block> SLATE_PRESSURE_PLATE = BLOCKS.register("slate_pressure_plate", () -> new ModPressurePlateBlock(Sensitivity.EVERYTHING, Block.Properties.create(Material.ROCK, MaterialColor.STONE)));
-	public static final RegistryObject<Block> SLATE_VERTICAL_SLAB = BLOCKS.register("slate_vertical_slab", () -> new VerticalSlabBlock(Block.Properties.create(Material.ROCK)));
-	public static final RegistryObject<Block> SLATE_STEP = BLOCKS.register("slate_step", () -> new StepBlock(Block.Properties.create(Material.ROCK, MaterialColor.STONE)));
-	public static final RegistryObject<Block> SLATE_WALL = BLOCKS.register("slate_wall", () -> new WallBlock(Block.Properties.from(Blocks.STONE)));
+	public static final RegistryObject<Block> SLATE_VERTICAL_SLAB = BLOCKS.register("slate_vertical_slab", () -> new VerticalSlabBlock(Block.Properties.create(Material.ROCK).hardnessAndResistance(1.25f, 4.2f)));
+	public static final RegistryObject<Block> SLATE_STEP = BLOCKS.register("slate_step", () -> new StepBlock(Block.Properties.create(Material.ROCK, MaterialColor.STONE).hardnessAndResistance(1.25f, 4.2f)));
+	public static final RegistryObject<Block> SLATE_WALL = BLOCKS.register("slate_wall", () -> new WallBlock(Block.Properties.from(Blocks.STONE).hardnessAndResistance(1.25f, 4.2f)));
 	
-	public static final RegistryObject<Block> SLATE_BLUE = BLOCKS.register("slate_blue", () -> new Block(Block.Properties.create(Material.ROCK)));
-	public static final RegistryObject<Block> SLATE_BLUE_SLAB = BLOCKS.register("slate_blue_slab", () -> new SlabBlock(Block.Properties.create(Material.ROCK)));
-	public static final RegistryObject<Block> SLATE_BLUE_STAIRS = BLOCKS.register("slate_blue_stairs", () -> new StairsBlock(() -> Blocks.STONE.getDefaultState(), Block.Properties.create(Material.ROCK, MaterialColor.STONE)));
+	public static final RegistryObject<Block> SLATE_BLUE = BLOCKS.register("slate_blue", () -> new Block(Block.Properties.create(Material.ROCK).hardnessAndResistance(1.25f, 4.2f)));
+	public static final RegistryObject<Block> SLATE_BLUE_SLAB = BLOCKS.register("slate_blue_slab", () -> new SlabBlock(Block.Properties.create(Material.ROCK).hardnessAndResistance(1.25f, 4.2f)));
+	public static final RegistryObject<Block> SLATE_BLUE_STAIRS = BLOCKS.register("slate_blue_stairs", () -> new StairsBlock(() -> Blocks.STONE.getDefaultState(), Block.Properties.create(Material.ROCK, MaterialColor.STONE).hardnessAndResistance(1.25f, 4.2f)));
 	public static final RegistryObject<Block> SLATE_BLUE_BUTTON = BLOCKS.register("slate_blue_button", () -> new ModWoodButtonBlock(Block.Properties.create(Material.ROCK, MaterialColor.STONE)));
 	public static final RegistryObject<Block> SLATE_BLUE_PRESSURE_PLATE = BLOCKS.register("slate_blue_pressure_plate", () -> new ModPressurePlateBlock(Sensitivity.EVERYTHING, Block.Properties.create(Material.ROCK, MaterialColor.STONE)));
-	public static final RegistryObject<Block> SLATE_BLUE_VERTICAL_SLAB = BLOCKS.register("slate_blue_vertical_slab", () -> new VerticalSlabBlock(Block.Properties.create(Material.ROCK)));
-	public static final RegistryObject<Block> SLATE_BLUE_STEP = BLOCKS.register("slate_blue_step", () -> new StepBlock(Block.Properties.create(Material.ROCK, MaterialColor.STONE)));
-	public static final RegistryObject<Block> SLATE_BLUE_WALL = BLOCKS.register("slate_blue_wall", () -> new WallBlock(Block.Properties.from(Blocks.STONE)));
+	public static final RegistryObject<Block> SLATE_BLUE_VERTICAL_SLAB = BLOCKS.register("slate_blue_vertical_slab", () -> new VerticalSlabBlock(Block.Properties.create(Material.ROCK).hardnessAndResistance(1.25f, 4.2f)));
+	public static final RegistryObject<Block> SLATE_BLUE_STEP = BLOCKS.register("slate_blue_step", () -> new StepBlock(Block.Properties.create(Material.ROCK, MaterialColor.STONE).hardnessAndResistance(1.25f, 4.2f)));
+	public static final RegistryObject<Block> SLATE_BLUE_WALL = BLOCKS.register("slate_blue_wall", () -> new WallBlock(Block.Properties.from(Blocks.STONE).hardnessAndResistance(1.25f, 4.2f)));
 	
-	public static final RegistryObject<Block> SLATE_GREEN = BLOCKS.register("slate_green", () -> new Block(Block.Properties.create(Material.ROCK)));
-	public static final RegistryObject<Block> SLATE_GREEN_SLAB = BLOCKS.register("slate_green_slab", () -> new SlabBlock(Block.Properties.create(Material.ROCK)));
-	public static final RegistryObject<Block> SLATE_GREEN_STAIRS = BLOCKS.register("slate_green_stairs", () -> new StairsBlock(() -> Blocks.STONE.getDefaultState(), Block.Properties.create(Material.ROCK, MaterialColor.STONE)));
+	public static final RegistryObject<Block> SLATE_GREEN = BLOCKS.register("slate_green", () -> new Block(Block.Properties.create(Material.ROCK).hardnessAndResistance(1.25f, 4.2f)));
+	public static final RegistryObject<Block> SLATE_GREEN_SLAB = BLOCKS.register("slate_green_slab", () -> new SlabBlock(Block.Properties.create(Material.ROCK).hardnessAndResistance(1.25f, 4.2f)));
+	public static final RegistryObject<Block> SLATE_GREEN_STAIRS = BLOCKS.register("slate_green_stairs", () -> new StairsBlock(() -> Blocks.STONE.getDefaultState(), Block.Properties.create(Material.ROCK, MaterialColor.STONE).hardnessAndResistance(1.25f, 4.2f)));
 	public static final RegistryObject<Block> SLATE_GREEN_BUTTON = BLOCKS.register("slate_green_button", () -> new ModWoodButtonBlock(Block.Properties.create(Material.ROCK, MaterialColor.STONE)));
 	public static final RegistryObject<Block> SLATE_GREEN_PRESSURE_PLATE = BLOCKS.register("slate_green_pressure_plate", () -> new ModPressurePlateBlock(Sensitivity.EVERYTHING, Block.Properties.create(Material.ROCK, MaterialColor.STONE)));
-	public static final RegistryObject<Block> SLATE_GREEN_VERTICAL_SLAB = BLOCKS.register("slate_green_vertical_slab", () -> new VerticalSlabBlock(Block.Properties.create(Material.ROCK)));
-	public static final RegistryObject<Block> SLATE_GREEN_STEP = BLOCKS.register("slate_green_step", () -> new StepBlock(Block.Properties.create(Material.ROCK, MaterialColor.STONE)));
-	public static final RegistryObject<Block> SLATE_GREEN_WALL = BLOCKS.register("slate_green_wall", () -> new WallBlock(Block.Properties.from(Blocks.STONE)));
+	public static final RegistryObject<Block> SLATE_GREEN_VERTICAL_SLAB = BLOCKS.register("slate_green_vertical_slab", () -> new VerticalSlabBlock(Block.Properties.create(Material.ROCK).hardnessAndResistance(1.25f, 4.2f)));
+	public static final RegistryObject<Block> SLATE_GREEN_STEP = BLOCKS.register("slate_green_step", () -> new StepBlock(Block.Properties.create(Material.ROCK, MaterialColor.STONE).hardnessAndResistance(1.25f, 4.2f)));
+	public static final RegistryObject<Block> SLATE_GREEN_WALL = BLOCKS.register("slate_green_wall", () -> new WallBlock(Block.Properties.from(Blocks.STONE).hardnessAndResistance(1.25f, 4.2f)));
 
-	public static final RegistryObject<Block> SLATE_PURPLE = BLOCKS.register("slate_purple", () -> new Block(Block.Properties.create(Material.ROCK)));
-	public static final RegistryObject<Block> SLATE_PURPLE_SLAB = BLOCKS.register("slate_purple_slab", () -> new SlabBlock(Block.Properties.create(Material.ROCK)));
-	public static final RegistryObject<Block> SLATE_PURPLE_STAIRS = BLOCKS.register("slate_purple_stairs", () -> new StairsBlock(() -> Blocks.STONE.getDefaultState(), Block.Properties.create(Material.ROCK, MaterialColor.STONE)));
+	public static final RegistryObject<Block> SLATE_PURPLE = BLOCKS.register("slate_purple", () -> new Block(Block.Properties.create(Material.ROCK).hardnessAndResistance(1.25f, 4.2f)));
+	public static final RegistryObject<Block> SLATE_PURPLE_SLAB = BLOCKS.register("slate_purple_slab", () -> new SlabBlock(Block.Properties.create(Material.ROCK).hardnessAndResistance(1.25f, 4.2f)));
+	public static final RegistryObject<Block> SLATE_PURPLE_STAIRS = BLOCKS.register("slate_purple_stairs", () -> new StairsBlock(() -> Blocks.STONE.getDefaultState(), Block.Properties.create(Material.ROCK, MaterialColor.STONE).hardnessAndResistance(1.25f, 4.2f)));
 	public static final RegistryObject<Block> SLATE_PURPLE_BUTTON = BLOCKS.register("slate_purple_button", () -> new ModWoodButtonBlock(Block.Properties.create(Material.ROCK, MaterialColor.STONE)));
 	public static final RegistryObject<Block> SLATE_PURPLE_PRESSURE_PLATE = BLOCKS.register("slate_purple_pressure_plate", () -> new ModPressurePlateBlock(Sensitivity.EVERYTHING, Block.Properties.create(Material.ROCK, MaterialColor.STONE)));
-	public static final RegistryObject<Block> SLATE_PURPLE_VERTICAL_SLAB = BLOCKS.register("slate_purple_vertical_slab", () -> new VerticalSlabBlock(Block.Properties.create(Material.ROCK)));
-	public static final RegistryObject<Block> SLATE_PURPLE_STEP = BLOCKS.register("slate_purple_step", () -> new StepBlock(Block.Properties.create(Material.ROCK, MaterialColor.STONE)));
-	public static final RegistryObject<Block> SLATE_PURPLE_WALL = BLOCKS.register("slate_purple_wall", () -> new WallBlock(Block.Properties.from(Blocks.STONE)));
+	public static final RegistryObject<Block> SLATE_PURPLE_VERTICAL_SLAB = BLOCKS.register("slate_purple_vertical_slab", () -> new VerticalSlabBlock(Block.Properties.create(Material.ROCK).hardnessAndResistance(1.25f, 4.2f)));
+	public static final RegistryObject<Block> SLATE_PURPLE_STEP = BLOCKS.register("slate_purple_step", () -> new StepBlock(Block.Properties.create(Material.ROCK, MaterialColor.STONE).hardnessAndResistance(1.25f, 4.2f)));
+	public static final RegistryObject<Block> SLATE_PURPLE_WALL = BLOCKS.register("slate_purple_wall", () -> new WallBlock(Block.Properties.from(Blocks.STONE).hardnessAndResistance(1.25f, 4.2f)));
 	
 	// blue + Hue 122, Saturation 127
-	public static final RegistryObject<Block> SLATE_RED = BLOCKS.register("slate_red", () -> new Block(Block.Properties.create(Material.ROCK)));
-	public static final RegistryObject<Block> SLATE_RED_SLAB = BLOCKS.register("slate_red_slab", () -> new SlabBlock(Block.Properties.create(Material.ROCK)));
-	public static final RegistryObject<Block> SLATE_RED_STAIRS = BLOCKS.register("slate_red_stairs", () -> new StairsBlock(() -> Blocks.STONE.getDefaultState(), Block.Properties.create(Material.ROCK, MaterialColor.STONE)));
+	public static final RegistryObject<Block> SLATE_RED = BLOCKS.register("slate_red", () -> new Block(Block.Properties.create(Material.ROCK).hardnessAndResistance(1.25f, 4.2f)));
+	public static final RegistryObject<Block> SLATE_RED_SLAB = BLOCKS.register("slate_red_slab", () -> new SlabBlock(Block.Properties.create(Material.ROCK).hardnessAndResistance(1.25f, 4.2f)));
+	public static final RegistryObject<Block> SLATE_RED_STAIRS = BLOCKS.register("slate_red_stairs", () -> new StairsBlock(() -> Blocks.STONE.getDefaultState(), Block.Properties.create(Material.ROCK, MaterialColor.STONE).hardnessAndResistance(1.25f, 4.2f)));
 	public static final RegistryObject<Block> SLATE_RED_BUTTON = BLOCKS.register("slate_red_button", () -> new ModWoodButtonBlock(Block.Properties.create(Material.ROCK, MaterialColor.STONE)));
 	public static final RegistryObject<Block> SLATE_RED_PRESSURE_PLATE = BLOCKS.register("slate_red_pressure_plate", () -> new ModPressurePlateBlock(Sensitivity.EVERYTHING, Block.Properties.create(Material.ROCK, MaterialColor.STONE)));
-	public static final RegistryObject<Block> SLATE_RED_VERTICAL_SLAB = BLOCKS.register("slate_red_vertical_slab", () -> new VerticalSlabBlock(Block.Properties.create(Material.ROCK)));
-	public static final RegistryObject<Block> SLATE_RED_STEP = BLOCKS.register("slate_red_step", () -> new StepBlock(Block.Properties.create(Material.ROCK, MaterialColor.STONE)));
-	public static final RegistryObject<Block> SLATE_RED_WALL = BLOCKS.register("slate_red_wall", () -> new WallBlock(Block.Properties.from(Blocks.STONE)));
+	public static final RegistryObject<Block> SLATE_RED_VERTICAL_SLAB = BLOCKS.register("slate_red_vertical_slab", () -> new VerticalSlabBlock(Block.Properties.create(Material.ROCK).hardnessAndResistance(1.25f, 4.2f)));
+	public static final RegistryObject<Block> SLATE_RED_STEP = BLOCKS.register("slate_red_step", () -> new StepBlock(Block.Properties.create(Material.ROCK, MaterialColor.STONE).hardnessAndResistance(1.25f, 4.2f)));
+	public static final RegistryObject<Block> SLATE_RED_WALL = BLOCKS.register("slate_red_wall", () -> new WallBlock(Block.Properties.from(Blocks.STONE).hardnessAndResistance(1.25f, 4.2f)));
 	
 	public static final RegistryObject<Block> SLATE_POLISHED = BLOCKS.register("slate_polished", () -> new Block(Block.Properties.create(Material.ROCK)));
 	public static final RegistryObject<Block> SLATE_POLISHED_SLAB = BLOCKS.register("slate_polished_slab", () -> new SlabBlock(Block.Properties.create(Material.ROCK)));
@@ -173,6 +179,7 @@ public class BlockInitNew {
 	// Lets put these in a loop?
 	public static final RegistryObject<Block> WALNUT_PLANKS = BLOCKS.register("walnut_planks", () -> new Block(Block.Properties.from(Blocks.OAK_PLANKS)));
 	public static final RegistryObject<Block> WALNUT_LOG = BLOCKS.register("walnut_log", () -> new LogBlock(MaterialColor.WOOD, Block.Properties.from(Blocks.OAK_LOG)));
+	public static final RegistryObject<Block> WALNUT_LOG_WALL = BLOCKS.register("walnut_log_wall", () -> new WallBlock(Block.Properties.from(Blocks.OAK_LOG)));
 	public static final RegistryObject<Block> WALNUT_LEAVES = BLOCKS.register("walnut_leaves", () -> new LeavesBlock(Block.Properties.from(Blocks.OAK_LEAVES)));
 	public static final RegistryObject<Block> WALNUT_SAPLING = BLOCKS.register("walnut_sapling", () -> new ModSaplingBlock(() -> new WalnutTree(), Block.Properties.from(Blocks.OAK_SAPLING)));
 	public static final RegistryObject<Block> WALNUT_LEAVES_CARPET = BLOCKS.register("walnut_leaves_carpet", () -> new ModCarpetBlock(Block.Properties.from(Blocks.OAK_LEAVES)));
@@ -187,6 +194,7 @@ public class BlockInitNew {
 	
 	public static final RegistryObject<Block> MAHOGANY_PLANKS = BLOCKS.register("mahogany_planks", () -> new Block(Block.Properties.from(Blocks.OAK_PLANKS)));
 	public static final RegistryObject<Block> MAHOGANY_LOG = BLOCKS.register("mahogany_log", () -> new LogBlock(MaterialColor.WOOD, Block.Properties.from(Blocks.OAK_LOG)));
+	public static final RegistryObject<Block> MAHOGANY_LOG_WALL = BLOCKS.register("mahogany_log_wall", () -> new WallBlock(Block.Properties.from(Blocks.OAK_LOG)));
 	public static final RegistryObject<Block> MAHOGANY_LEAVES = BLOCKS.register("mahogany_leaves", () -> new LeavesBlock(Block.Properties.from(Blocks.OAK_LEAVES)));
 	public static final RegistryObject<Block> MAHOGANY_SAPLING = BLOCKS.register("mahogany_sapling", () -> new ModSaplingBlock(() -> new MahoganyTree(), Block.Properties.from(Blocks.OAK_SAPLING)));
 	public static final RegistryObject<Block> MAHOGANY_LEAVES_CARPET = BLOCKS.register("mahogany_leaves_carpet", () -> new ModCarpetBlock(Block.Properties.from(Blocks.OAK_LEAVES)));
@@ -201,6 +209,7 @@ public class BlockInitNew {
 	
 	public static final RegistryObject<Block> FIR_PLANKS = BLOCKS.register("fir_planks", () -> new Block(Block.Properties.from(Blocks.OAK_PLANKS)));
 	public static final RegistryObject<Block> FIR_LOG = BLOCKS.register("fir_log", () -> new LogBlock(MaterialColor.WOOD, Block.Properties.from(Blocks.OAK_LOG)));
+	public static final RegistryObject<Block> FIR_LOG_WALL = BLOCKS.register("fir_log_wall", () -> new WallBlock(Block.Properties.from(Blocks.OAK_LOG)));
 	public static final RegistryObject<Block> FIR_LEAVES = BLOCKS.register("fir_leaves", () -> new LeavesBlock(Block.Properties.from(Blocks.OAK_LEAVES)));
 	public static final RegistryObject<Block> FIR_SAPLING = BLOCKS.register("fir_sapling", () -> new ModSaplingBlock(() -> new FirTree(), Block.Properties.from(Blocks.OAK_SAPLING)));
 	public static final RegistryObject<Block> FIR_LEAVES_CARPET = BLOCKS.register("fir_leaves_carpet", () -> new ModCarpetBlock(Block.Properties.from(Blocks.OAK_LEAVES)));
@@ -215,6 +224,7 @@ public class BlockInitNew {
 	
 	public static final RegistryObject<Block> ANCIENT_TREE_PLANKS = BLOCKS.register("ancient_tree_planks", () -> new Block(Block.Properties.from(Blocks.OAK_PLANKS)));
 	public static final RegistryObject<Block> ANCIENT_TREE_LOG = BLOCKS.register("ancient_tree_log", () -> new LogBlock(MaterialColor.WOOD, Block.Properties.from(Blocks.OAK_LOG)));
+	public static final RegistryObject<Block> ANCIENT_TREE_LOG_WALL = BLOCKS.register("ancient_tree_log_wall", () -> new WallBlock(Block.Properties.from(Blocks.OAK_LOG)));
 	public static final RegistryObject<Block> ANCIENT_TREE_LEAVES = BLOCKS.register("ancient_tree_leaves", () -> new LeavesBlock(Block.Properties.from(Blocks.OAK_LEAVES)));
 	public static final RegistryObject<Block> ANCIENT_TREE_SAPLING = BLOCKS.register("ancient_tree_sapling", () -> new ModSaplingBlock(() -> new AncientTree(), Block.Properties.from(Blocks.OAK_SAPLING)));
 	public static final RegistryObject<Block> ANCIENT_TREE_LEAVES_CARPET = BLOCKS.register("ancient_tree_leaves_carpet", () -> new ModCarpetBlock(Block.Properties.from(Blocks.OAK_LEAVES)));
@@ -229,6 +239,7 @@ public class BlockInitNew {
 	
 	public static final RegistryObject<Block> PINE_PLANKS = BLOCKS.register("pine_planks", () -> new Block(Block.Properties.from(Blocks.OAK_PLANKS)));
 	public static final RegistryObject<Block> PINE_LOG = BLOCKS.register("pine_log", () -> new LogBlock(MaterialColor.WOOD, Block.Properties.from(Blocks.OAK_LOG)));
+	public static final RegistryObject<Block> PINE_LOG_WALL = BLOCKS.register("pine_log_wall", () -> new WallBlock(Block.Properties.from(Blocks.OAK_LOG)));
 	public static final RegistryObject<Block> PINE_LEAVES = BLOCKS.register("pine_leaves", () -> new LeavesBlock(Block.Properties.from(Blocks.OAK_LEAVES)));
 	public static final RegistryObject<Block> PINE_SAPLING = BLOCKS.register("pine_sapling", () -> new ModSaplingBlock(() -> new PineTree(), Block.Properties.from(Blocks.OAK_SAPLING)));
 	public static final RegistryObject<Block> PINE_LEAVES_CARPET = BLOCKS.register("pine_leaves_carpet", () -> new ModCarpetBlock(Block.Properties.from(Blocks.OAK_LEAVES)));
@@ -243,6 +254,7 @@ public class BlockInitNew {
 	
 	public static final RegistryObject<Block> WENGE_PLANKS = BLOCKS.register("wenge_planks", () -> new Block(Block.Properties.from(Blocks.OAK_PLANKS)));
 	public static final RegistryObject<Block> WENGE_LOG = BLOCKS.register("wenge_log", () -> new LogBlock(MaterialColor.WOOD, Block.Properties.from(Blocks.OAK_LOG)));
+	public static final RegistryObject<Block> WENGE_LOG_WALL = BLOCKS.register("wenge_log_wall", () -> new WallBlock(Block.Properties.from(Blocks.OAK_LOG)));
 	public static final RegistryObject<Block> WENGE_LEAVES = BLOCKS.register("wenge_leaves", () -> new LeavesBlock(Block.Properties.from(Blocks.OAK_LEAVES)));
 	public static final RegistryObject<Block> WENGE_SAPLING = BLOCKS.register("wenge_sapling", () -> new ModSaplingBlock(() -> new WengeTree(), Block.Properties.from(Blocks.OAK_SAPLING)));
 	public static final RegistryObject<Block> WENGE_LEAVES_CARPET = BLOCKS.register("wenge_leaves_carpet", () -> new ModCarpetBlock(Block.Properties.from(Blocks.OAK_LEAVES)));
@@ -257,6 +269,7 @@ public class BlockInitNew {
 	
 	public static final RegistryObject<Block> WILLOW_PLANKS = BLOCKS.register("willow_planks", () -> new Block(Block.Properties.from(Blocks.OAK_PLANKS)));
 	public static final RegistryObject<Block> WILLOW_LOG = BLOCKS.register("willow_log", () -> new LogBlock(MaterialColor.WOOD, Block.Properties.from(Blocks.OAK_LOG)));
+	public static final RegistryObject<Block> WILLOW_LOG_WALL = BLOCKS.register("willow_log_wall", () -> new WallBlock(Block.Properties.from(Blocks.OAK_LOG)));
 	public static final RegistryObject<Block> WILLOW_LEAVES = BLOCKS.register("willow_leaves", () -> new LeavesBlock(Block.Properties.from(Blocks.OAK_LEAVES)));
 	public static final RegistryObject<Block> WILLOW_SAPLING = BLOCKS.register("willow_sapling", () -> new ModSaplingBlock(() -> new WillowTree(), Block.Properties.from(Blocks.OAK_SAPLING)));
 	public static final RegistryObject<Block> WILLOW_LEAVES_CARPET = BLOCKS.register("willow_leaves_carpet", () -> new ModCarpetBlock(Block.Properties.from(Blocks.OAK_LEAVES)));
@@ -271,6 +284,7 @@ public class BlockInitNew {
 	
 	public static final RegistryObject<Block> MAPLE_PLANKS = BLOCKS.register("maple_planks", () -> new Block(Block.Properties.from(Blocks.OAK_PLANKS)));
 	public static final RegistryObject<Block> MAPLE_LOG = BLOCKS.register("maple_log", () -> new LogBlock(MaterialColor.WOOD, Block.Properties.from(Blocks.OAK_LOG)));
+	public static final RegistryObject<Block> MAPLE_LOG_WALL = BLOCKS.register("maple_log_wall", () -> new WallBlock(Block.Properties.from(Blocks.OAK_LOG)));
 	public static final RegistryObject<Block> MAPLE_LEAVES = BLOCKS.register("maple_leaves", () -> new LeavesBlock(Block.Properties.from(Blocks.OAK_LEAVES)));
 	public static final RegistryObject<Block> MAPLE_SAPLING = BLOCKS.register("maple_sapling", () -> new ModSaplingBlock(() -> new MapleTree(), Block.Properties.from(Blocks.OAK_SAPLING)));
 	public static final RegistryObject<Block> MAPLE_LEAVES_CARPET = BLOCKS.register("maple_leaves_carpet", () -> new ModCarpetBlock(Block.Properties.from(Blocks.OAK_LEAVES)));
@@ -286,6 +300,7 @@ public class BlockInitNew {
 	// Cherry Trees
 	public static final RegistryObject<Block> CHERRY_PLANKS = BLOCKS.register("cherry_planks", () -> new Block(Block.Properties.from(Blocks.OAK_PLANKS)));
 	public static final RegistryObject<Block> CHERRY_LOG = BLOCKS.register("cherry_log", () -> new LogBlock(MaterialColor.WOOD, Block.Properties.from(Blocks.OAK_LOG)));
+	public static final RegistryObject<Block> CHERRY_LOG_WALL = BLOCKS.register("cherry_log_wall", () -> new WallBlock(Block.Properties.from(Blocks.OAK_LOG)));
 	
 	public static final RegistryObject<Block> CHERRY_WHITE_LEAVES = BLOCKS.register("cherry_white_leaves", () -> new LeavesBlock(Block.Properties.from(Blocks.OAK_LEAVES)));
 	public static final RegistryObject<Block> CHERRY_WHITE_SAPLING = BLOCKS.register("cherry_white_sapling", () -> new ModSaplingBlock(() -> new CherryWhiteTree(), Block.Properties.from(Blocks.OAK_SAPLING)));

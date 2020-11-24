@@ -26,6 +26,8 @@ public class SpecialItem extends Item{
 		return true;
 	}
 	
+	
+	
 	@Override
 	public void addInformation(ItemStack stack, World worldIn, List<ITextComponent> tooltip, ITooltipFlag flagIn) {
 		if(KeyboardHelper.isHoldingShift()) {

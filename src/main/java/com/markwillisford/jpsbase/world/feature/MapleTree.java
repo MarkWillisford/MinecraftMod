@@ -31,7 +31,9 @@ public class MapleTree extends Tree{
 			new SimpleBlockStateProvider(BlockInitNew.MAPLE_LEAVES.get().getDefaultState()), 
 			new BlobFoliagePlacer(0, 0)))
 			.setSapling((net.minecraftforge.common.IPlantable)BlockInitNew.MAPLE_SAPLING.get()).build();
-	     
+	
+	
+	
 	/*@Override
 	protected ConfiguredFeature<TreeFeatureConfig, ?> getTreeFeature(Random randomIn, boolean b) {
 		return Feature.NORMAL_TREE.withConfiguration(MAPLE_TREE_CONFIG); 

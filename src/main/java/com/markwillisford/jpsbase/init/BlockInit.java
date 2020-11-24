@@ -2,6 +2,7 @@ package com.markwillisford.jpsbase.init;
 
 import com.markwillisford.jpsbase.JPsBase;
 import com.markwillisford.jpsbase.JPsBase.TutorialItemGroup;
+import com.markwillisford.jpsbase.objects.blocks.BlockQuarry;
 import com.markwillisford.jpsbase.objects.blocks.SpecalBlock;
 
 import net.minecraft.block.Block;
@@ -21,7 +22,6 @@ import net.minecraftforge.registries.ObjectHolder;
 public class BlockInit {
 	public static final Block example_block = null;
 	public static final Block specal_block = null;
-	public static final Block quarry = null;
 	
 	@SubscribeEvent
 	public static void registerBlocks(final RegistryEvent.Register<Block> event) {
@@ -29,8 +29,7 @@ public class BlockInit {
 		event.getRegistry().register(new SpecalBlock(Block.Properties.create(Material.WOOD).hardnessAndResistance(2.0F)
 				.harvestTool(ToolType.AXE).harvestLevel(2).sound(SoundType.GLASS).lightValue(4)
 				.slipperiness(1.2f).noDrops()).setRegistryName("specal_block"));
-
-	}
+		}
 	
 	@SubscribeEvent
 	public static void registerBlockItems(final RegistryEvent.Register<Item> event) {

@@ -1,0 +1,5 @@
+{
+    "variants": {
+        "": { "model": "jpsbase:block/example_chest" }
+    }
+}

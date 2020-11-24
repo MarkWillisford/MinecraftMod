@@ -3,6 +3,8 @@ package com.markwillisford.jpsbase.util.helpers;
 import javax.annotation.Nonnull;
 import javax.annotation.Nullable;
 
+import com.markwillisford.jpsbase.tileentity.QuarryTileEntity;
+
 // import com.markwillisford.jpsbase.tileentity.QuarryTileEntity;
 
 import net.minecraft.item.Item;
@@ -16,11 +18,9 @@ public class NBTHelper {
 		if(o instanceof ItemStack) {
 			return writeItemStack((ItemStack)o);
 		}
-		/*
 		if(o instanceof QuarryTileEntity) {
 			return writeQuarry((QuarryTileEntity)o);
 		}
-		*/
 		
 		return null;
 	}
@@ -33,7 +33,6 @@ public class NBTHelper {
 		return nbt;
 	}
 
-	/*
 	private static CompoundNBT writeQuarry(QuarryTileEntity o) {
 		CompoundNBT compound = new CompoundNBT();
 		compound.putInt("x", o.x);
@@ -41,15 +40,14 @@ public class NBTHelper {
 		compound.putInt("z", o.z);
 		return compound;
 	}
-	*/
 	
 	@Nullable
-	public static Object fromObject(@Nonnull CompoundNBT compound) {
+	public static Object fromNBT(@Nonnull CompoundNBT compound) {	// fromObject?
 		switch(compound.getByte("type")) {
 		case 0:
 			return readItemStack(compound);
-			default:
-				return null;
+		default:
+			return null;
 		}
 	}
 

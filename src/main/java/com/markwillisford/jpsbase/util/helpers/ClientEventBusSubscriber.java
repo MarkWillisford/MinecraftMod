@@ -1,8 +1,11 @@
 package com.markwillisford.jpsbase.util.helpers;
 
 import com.markwillisford.jpsbase.JPsBase;
+import com.markwillisford.jpsbase.client.gui.ExampleChestScreen;
 import com.markwillisford.jpsbase.init.BlockInitNew;
+import com.markwillisford.jpsbase.init.ModContainerTypes;
 
+import net.minecraft.client.gui.ScreenManager;
 import net.minecraft.client.renderer.RenderType;
 import net.minecraft.client.renderer.RenderTypeLookup;
 import net.minecraftforge.api.distmarker.Dist;
@@ -35,6 +38,8 @@ public class ClientEventBusSubscriber {
 		RenderTypeLookup.setRenderLayer(BlockInitNew.CHERRY_PINK_LEAVES_CARPET.get(), RenderType.getCutout());
 		RenderTypeLookup.setRenderLayer(BlockInitNew.CHERRY_WHITE_SAPLING.get(), RenderType.getCutout());
 		RenderTypeLookup.setRenderLayer(BlockInitNew.CHERRY_WHITE_LEAVES_CARPET.get(), RenderType.getCutout());
+		
+		ScreenManager.registerFactory(ModContainerTypes.EXAMPLE_CHEST.get(), ExampleChestScreen::new);
 	}
 }
 

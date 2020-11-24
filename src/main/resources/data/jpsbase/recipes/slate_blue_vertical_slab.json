@@ -1,0 +1,17 @@
+{
+	"type":"minecraft:crafting_shaped",
+	"pattern":[
+		"I",
+		"I",
+		"I"
+	],
+	"key":{
+		"I":{
+			"item":"jpsbase:slate_blue"
+		}
+	},
+	"result":{
+		"item":"jpsbase:slate_blue_vertical_slab",
+		"count":6
+	}
+}

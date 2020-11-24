@@ -12,8 +12,10 @@
 	"item.jpsbase.test_leggings":"Test Leggings",
 	"item.jpsbase.test_boots":"Test Boots",
 	
+	"block.jpsbase.example_chest":"Example Chest",
 	"block.jpsbase.example_block":"Example Block",
 	"block.jpsbase.specal_block":"Specal Block",
 	
+	"container.example_chest":"Example Chest",
 	"itemGroup.tutorialtab":"Tutorial Tab"
 }

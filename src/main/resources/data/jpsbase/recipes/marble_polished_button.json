@@ -1,0 +1,11 @@
+{
+	"type":"minecraft:crafting_shapeless",
+	"ingredients":[
+		{
+			"item":"jpsbase:marble_polished"		
+		}
+	],
+	"result":{
+		"item":"jpsbase:marble_polished_button"
+	}
+} 

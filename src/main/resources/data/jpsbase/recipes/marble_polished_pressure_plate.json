@@ -1,0 +1,14 @@
+{
+	"type":"minecraft:crafting_shaped",
+  "pattern": [
+    "SS"
+  ],
+  "key": {
+    "S": {
+      "item": "jpsbase:marble_polished"
+    }
+  },
+	"result":{
+		"item":"jpsbase:marble_polished_pressure_plate"
+	}
+} 

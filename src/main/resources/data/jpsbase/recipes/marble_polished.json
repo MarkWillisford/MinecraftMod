@@ -1,0 +1,16 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "SS",
+    "SS"
+  ],
+  "key": {
+    "S": {
+      "item": "jpsbase:marble"
+    }
+  },
+  "result": {
+    "item": "jpsbase:marble_polished",
+    "count": 4
+  }
+}

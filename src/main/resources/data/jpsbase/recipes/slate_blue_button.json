@@ -1,0 +1,11 @@
+{
+	"type":"minecraft:crafting_shapeless",
+	"ingredients":[
+		{
+			"item":"jpsbase:slate_blue"		
+		}
+	],
+	"result":{
+		"item":"jpsbase:slate_blue_button"
+	}
+} 

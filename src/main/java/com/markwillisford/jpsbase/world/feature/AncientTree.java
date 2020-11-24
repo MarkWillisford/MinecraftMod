@@ -5,15 +5,16 @@ import java.util.Random;
 import com.markwillisford.jpsbase.init.BlockInitNew;
 import com.markwillisford.jpsbase.objects.placers.WalnutFoliagePlacer;
 
-import net.minecraft.block.trees.Tree;
+import net.minecraft.block.trees.BigTree;
 import net.minecraft.world.gen.blockstateprovider.SimpleBlockStateProvider;
 import net.minecraft.world.gen.feature.ConfiguredFeature;
 import net.minecraft.world.gen.feature.Feature;
+import net.minecraft.world.gen.feature.HugeTreeFeatureConfig;
 import net.minecraft.world.gen.feature.TreeFeatureConfig;
 import net.minecraft.world.gen.foliageplacer.BlobFoliagePlacer;
 import net.minecraftforge.common.IPlantable;
 
-public class AncientTree extends Tree{
+public class AncientTree extends BigTree{
 	   
 	public static final TreeFeatureConfig WALNUT_TREE_CONFIG = (new TreeFeatureConfig.Builder(
 			new SimpleBlockStateProvider(BlockInitNew.WALNUT_LOG.get().getDefaultState()), 
@@ -38,9 +39,22 @@ public class AncientTree extends Tree{
 			.ignoreVines()
 			.setSapling((IPlantable)BlockInitNew.ANCIENT_TREE_SAPLING.get()).build();
 	
-	@Override
-	protected ConfiguredFeature<TreeFeatureConfig, ?> getTreeFeature(Random randomIn, boolean b) {
-		return Feature.NORMAL_TREE.withConfiguration(WALNUT_TREE_CONFIG2); 
+	public static final HugeTreeFeatureConfig MEGA_ANCIENT_TREE_CONFIG = (new HugeTreeFeatureConfig.Builder(
+			new SimpleBlockStateProvider(BlockInitNew.ANCIENT_TREE_LOG.get().getDefaultState()), 
+			new SimpleBlockStateProvider(BlockInitNew.ANCIENT_TREE_LEAVES.get().getDefaultState())))
+			.baseHeight(20)
+			.heightInterval(10)	// 
+			.crownHeight(0)		//
+			//.decorators(ImmutableList.of(new AlterGroundTreeDecorator(new SimpleBlockStateProvider(PODZOL))))
+			.setSapling((IPlantable)BlockInitNew.ANCIENT_TREE_SAPLING.get()).build();
+	
+	
+	
+	// public static final HugeTreeFeatureConfig MEGA_PINE_TREE_CONFIG = (new HugeTreeFeatureConfig.Builder(new SimpleBlockStateProvider(SPRUCE_LOG), new SimpleBlockStateProvider(SPRUCE_LEAVES))).baseHeight(13).heightInterval(15).crownHeight(3).decorators(ImmutableList.of(new AlterGroundTreeDecorator(new SimpleBlockStateProvider(PODZOL)))).setSapling((net.minecraftforge.common.IPlantable)Blocks.SPRUCE_SAPLING).build();
+
+	//@Override
+	protected ConfiguredFeature<HugeTreeFeatureConfig, ?> getHugeTreeFeature(Random randomIn) {
+		return Feature.MEGA_SPRUCE_TREE.withConfiguration(MEGA_ANCIENT_TREE_CONFIG); 
 		
 	//@Override
 	// protected ConfiguredFeature<TreeFeatureConfig, ?> getTreeFeature(Random randomIn, boolean b) {
@@ -55,4 +69,12 @@ public class AncientTree extends Tree{
 	
 	
 	 }
+
+
+
+	@Override
+	protected ConfiguredFeature<TreeFeatureConfig, ?> getTreeFeature(
+			Random randomIn, boolean p_225546_2_) {
+		return null;
+	}
 }

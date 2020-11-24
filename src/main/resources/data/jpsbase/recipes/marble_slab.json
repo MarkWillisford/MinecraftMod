@@ -1,0 +1,15 @@
+{
+	"type":"minecraft:crafting_shaped",
+	"pattern":[
+		"III"
+	],
+	"key":{
+		"I":{
+			"item":"jpsbase:marble"
+		}
+	},
+	"result":{
+		"item":"jpsbase:marble_slab",
+		"count":6
+	}
+}

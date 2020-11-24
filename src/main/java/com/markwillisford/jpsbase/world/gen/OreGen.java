@@ -33,23 +33,23 @@ public class OreGen {
 			ConfiguredPlacement<CountRangeConfig> oreConfig = Placement.COUNT_RANGE
 					.configure(new CountRangeConfig(1, 0, 0, 16));	
 			ConfiguredPlacement<CountRangeConfig> alternateStoneConfig = Placement.COUNT_RANGE
-					.configure(new CountRangeConfig(5, 32, 0, 80));	
+					.configure(new CountRangeConfig(5, 32, 0, 80));	 //TODO! turn this down a bit
 			
 			biome.addFeature(GenerationStage.Decoration.UNDERGROUND_ORES,
 				Feature.ORE.withConfiguration(new OreFeatureConfig(OreFeatureConfig.FillerBlockType.NATURAL_STONE,
-				BlockInitNew.RUBY_ORE.get().getDefaultState(), 2)) // this int is the max vain size
+				BlockInitNew.RUBY_ORE.get().getDefaultState(), 4)) // this int is the max vain size
 				.withPlacement(gemConfig));
 			biome.addFeature(GenerationStage.Decoration.UNDERGROUND_ORES,
 					Feature.ORE.withConfiguration(new OreFeatureConfig(OreFeatureConfig.FillerBlockType.NATURAL_STONE,
-					BlockInitNew.SAPPHIRE_ORE.get().getDefaultState(), 2))
+					BlockInitNew.SAPPHIRE_ORE.get().getDefaultState(), 4))
 					.withPlacement(gemConfig));
 			biome.addFeature(GenerationStage.Decoration.UNDERGROUND_ORES,
 					Feature.ORE.withConfiguration(new OreFeatureConfig(OreFeatureConfig.FillerBlockType.NATURAL_STONE,
-					BlockInitNew.SMALL_MITHRAL_ORE.get().getDefaultState(), 2))
+					BlockInitNew.SMALL_MITHRAL_ORE.get().getDefaultState(), 4))
 					.withPlacement(oreConfig));
 			biome.addFeature(GenerationStage.Decoration.UNDERGROUND_ORES,
 					Feature.ORE.withConfiguration(new OreFeatureConfig(OreFeatureConfig.FillerBlockType.NATURAL_STONE,
-					BlockInitNew.SMALL_ADAMANTINE_ORE.get().getDefaultState(), 2))
+					BlockInitNew.SMALL_ADAMANTINE_ORE.get().getDefaultState(), 4))
 					.withPlacement(oreConfig));
 			
 			biome.addFeature(GenerationStage.Decoration.UNDERGROUND_ORES,

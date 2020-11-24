@@ -1,0 +1,14 @@
+{
+	"type":"minecraft:crafting_shaped",
+  "pattern": [
+    "SS"
+  ],
+  "key": {
+    "S": {
+      "item": "jpsbase:slate_blue"
+    }
+  },
+	"result":{
+		"item":"jpsbase:slate_blue_pressure_plate"
+	}
+} 

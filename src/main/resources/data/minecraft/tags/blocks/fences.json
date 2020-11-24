@@ -1,6 +1,15 @@
 {
 	"replace":"false",
 	"values":[
-		"jpsbase:mahogany_planks_fence"
+		"jpsbase:mahogany_planks_fence",
+		"jpsbase:walnut_planks_fence",
+		"jpsbase:fir_planks_fence",
+		"jpsbase:ancient_tree_planks_fence",
+		"jpsbase:pine_planks_fence",
+		"jpsbase:wenge_planks_fence",
+		"jpsbase:willow_planks_fence",
+		"jpsbase:maple_planks_fence",
+		"jpsbase:cherry_planks_fence",
+    	"minecraft:nether_brick_fence"
 	]
 }
